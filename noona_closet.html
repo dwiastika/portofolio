@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noona Closet – Digital Marketing Project | Dwi Astika</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --navbar-height: 80px;
+    --primary: hsl(210, 39%, 35%);
+    --soft-bg: hsl(210, 15%, 95%);
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #0f172a;
+    line-height: 1.7;
+    background: #fff;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    background: var(--primary);
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1400px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.brand {
+    position: absolute;
+    left: 2rem;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+/* GLOBAL */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+.section h2 {
+    font-size: 30px;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.section h2::before {
+    content: '';
+    width: 42px;
+    height: 4px;
+    background: var(--primary);
+    display: block;
+    border-radius: 99px;
+    margin-bottom: 14px;
+}
+
+.section p {
+    font-size: 15.5px;
+    color: #475569;
+}
+
+/* HERO */
+.project-hero {
+    height: 100vh;
+    padding-top: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #355c7d, #2a3f54);
+    color: #fff;
+}
+
+.project-hero h1 {
+    font-size: 44px;
+    margin: 16px 0 10px;
+}
+
+.project-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.project-subtitle {
+    max-width: 700px;
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+.project-meta {
+    margin-top: 28px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* GRID INFO */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 30px;
+}
+
+.info-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* LIST */
+.list {
+    padding-left: 20px;
+    margin-top: 14px;
+}
+
+.list li {
+    margin-bottom: 10px;
+}
+
+/* TAGS */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.tags span {
+    background: var(--soft-bg);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery img {
+    border-radius: 18px;
+    cursor: pointer;
+    transition: .35s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 18px;
+}
+
+/* BACK */
+.back-link {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.back-link a {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+/* NAVBAR */
+header {
+    height: auto;
+}
+
+nav {
+    flex-direction: column;
+    justify-content: center;
+    padding: 14px 16px;
+    gap: 10px;
+}
+
+.brand {
+    position: static;
+    font-size: 1.3rem;
+}
+
+.nav-links {
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links a {
+    font-size: 13px;
+}
+
+/* HERO */
+.project-hero {
+    height: auto;
+    padding: 110px 0 80px;
+    text-align: left;
+}
+
+.project-hero h1 {
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.project-subtitle {
+    font-size: 15px;
+}
+
+.project-meta {
+    gap: 10px;
+    font-size: 13px;
+}
+
+/* SECTION */
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    font-size: 24px;
+}
+
+.section p,
+.list li {
+    font-size: 14.5px;
+}
+
+/* GRID */
+.info-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.info-card {
+    padding: 22px;
+}
+
+/* TAGS */
+.tags span {
+    font-size: 12px;
+    padding: 6px 12px;
+}
+
+/* GALLERY */
+.gallery {
+    grid-template-columns: 1fr;
+}
+
+.gallery img {
+    border-radius: 14px;
+}
+
+/* BACK */
+.back-link {
+    padding: 40px 0;
+}
+
+.back-link a {
+    font-size: 14px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a class="brand" href="index.html">Dwi Astika</a>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certificates">Certification</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="project-hero">
+    <div class="container">
+        <span class="project-label">DIGITAL MARKETING PROJECT</span>
+        <h1>BNSP Certification Training : Study Case Noona Closet</h1>
+        <p class="project-subtitle">
+            Digital marketing strategy development focusing on keyword research,
+            content planning, and brand positioning for a Korean-inspired fashion label.
+        </p>
+
+        <div class="project-meta">
+            <span>Role: Digital Marketing</span>
+            <span>Program: BNSP Certification Training</span>
+            <span>Year: 2024</span>
+        </div>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section container">
+    <h2>Brand Overview</h2>
+    <p>
+        Noona Closet is a women’s fashion brand inspired by Korean style,
+        positioning itself as a sustainable fashion choice with premium value.
+        The brand targets modern women who value elegance, comfort, and quality.
+    </p>
+</section>
+
+<!-- SEGMENTATION -->
+<section class="section container">
+    <h2>Market Segmentation & Positioning</h2>
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>Target Audience</h3>
+            <ul class="list">
+                <li>Women aged 18+</li>
+                <li>Middle to upper-class consumers</li>
+                <li>University students & professional women</li>
+                <li>Korean fashion enthusiasts</li>
+            </ul>
+        </div>
+        <div class="info-card">
+            <h3>Brand Positioning</h3>
+            <ul class="list">
+                <li>Premium & sustainable fashion</li>
+                <li>Versatile blazers for daily & office wear</li>
+                <li>Elegant yet comfortable design</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- KEYWORD -->
+<section class="section container">
+    <h2>Keyword Research</h2>
+    <p>
+        Keyword research was conducted using Google Suggest, Google Trends,
+        and SEMrush to identify high-intent keywords related to Korean-style blazers.
+    </p>
+    <div class="tags">
+        <span>Blazer Korea</span>
+        <span>Blazer Wanita</span>
+        <span>Blazer Korea Style</span>
+        <span>Blazer Import Korea</span>
+    </div>
+</section>
+
+<!-- CONTENT PLANNING -->
+<section class="section container">
+    <h2>Content Planning Strategy</h2>
+    <ul class="list">
+        <li>Fashion inspiration & OOTD content</li>
+        <li>Educational posts on fabric quality</li>
+        <li>Promotion & bazaar announcements</li>
+        <li>Customer testimonials & reviews</li>
+        <li>Sustainable fashion education</li>
+    </ul>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="section container">
+    <h2>Deliverables</h2>
+    <div class="info-grid">
+        <div class="info-card">Keyword Research Analysis</div>
+        <div class="info-card">Content Pillar Framework</div>
+        <div class="info-card">Instagram Content Plan</div>
+        <div class="info-card">Landing Page Concept</div>
+    </div>
+</section>
+
+<!-- RESULT -->
+<section class="section container">
+    <h2>Results & Learning</h2>
+    <ul class="list">
+        <li>Clear content direction aligned with brand identity</li>
+        <li>Improved understanding of audience behavior</li>
+        <li>Stronger positioning in competitive fashion market</li>
+    </ul>
+</section>
+
+<!-- TOOLS -->
+<section class="section container">
+    <h2>Tools Used</h2>
+    <div class="tags">
+        <span>Google Trends</span>
+        <span>SEMrush</span>
+        <span>Instagram</span>
+        <span>Canva</span>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section container">
+    <h2>Project Visual</h2>
+    <div class="gallery">
+        <img src="image/projects/noona1.webp" alt="">
+        <img src="image/projects/noona2.webp" alt="">
+        <img src="image/projects/noona3.webp" alt="">
+    </div>
+</section>
+
+<div class="back-link">
+    <a href="index.html#projects">← Back to Projects</a>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="imgModal">
+    <img id="modalImg">
+</div>
+
+<script>
+const imgs = document.querySelectorAll('.gallery img');
+const modal = document.getElementById('imgModal');
+const modalImg = document.getElementById('modalImg');
+
+imgs.forEach(img => {
+    img.onclick = () => {
+        modalImg.src = img.src;
+        modal.classList.add('active');
+    }
+});
+
+modal.onclick = () => modal.classList.remove('active');
+</script>
+
+</body>
+</html>
