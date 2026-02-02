@@ -14,18 +14,44 @@
 
 <body>
 
-<header>
-    <nav>
-        <a class="brand" href="index.html">Dwi Astika</a>
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certificates">Certification</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <a class="brand" href="index.html">Dwi Astika</a>
+    
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html#hero">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#about">
+                        <i class="fa-solid fa-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#experience">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Experience</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#projects">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <span>Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#certificates">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>Certificate</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
 <section class="org-hero">
     <div class="org-logo-wrap">
@@ -96,12 +122,12 @@
 
         <div class="timeline-item" onclick="openEvent(this)"
             data-title="Marketpreneur#10"
-            data-role="Secretary · 20-21 Sept 2023"
+            data-role="20-21 Sept 2023"
             data-tasks="Managed event proposal, ToR, and sponsorship proposal to support planning and fundraising.;Managed invitation letters and attendance records in a structured and professional manner.;Scheduled meetings and distributed meeting minutes to support team coordination.;Prepared a final report for documentation and evaluation purposes.">
 
             <div class="timeline-body">
                 <span class="timeline-date">20-21 Sept 2023</span>
-                <h3>Marketpreneur#10</h3>
+                <h3>Secretary of "Marketpreneur#10"</h3>
                 <p>Marketpreneur is an annual event at Universitas Trilogi designed to foster creativity, innovation, and an entrepreneurial mindset among students through educational and competitive activities.</p>
                 <span class="timeline-link">View details</span>
             </div>
@@ -109,15 +135,15 @@
 
         <div class="timeline-item" onclick="openEvent(this)"
             data-title="Marketpreneur#9"
-            data-role="Vice Project · 2-3 Nov 2022"
+            data-role="2-3 Nov 2022"
             data-tasks="
             Coordinated and led a team of 43 committee members to ensure the smooth execution of the event.;
             Successfully attracted 475 participants for the seminar and workshop.;
-            Hosted distinguished speakers, including:|Adeline Widyaningraras (Founder of This is Your Skincare),Joanne Victoria (Head of Marketing at Luxcrime),Deddy Huang (Content & Digital Specialist)">
+            Hosted distinguished speakers, including: Adeline Widyaningraras (Founder of This is Your Skincare),Joanne Victoria (Head of Marketing at Luxcrime),Deddy Huang (Content & Digital Specialist)">
 
             <div class="timeline-body">
                 <span class="timeline-date">2-3 Nov 2022</span>
-                <h3>Marketpreneur#9</h3>
+                <h3>Vice Project of "Marketpreneur#9"</h3>
                 <p>Marketpreneur is an annual event at Universitas Trilogi designed to foster creativity, innovation, and an entrepreneurial mindset among students through educational and competitive activities.</p>
                 <span class="timeline-link">View details</span>
             </div>
@@ -146,11 +172,15 @@
             <p class="footer-text">
                 Dwi Astika
             </p>
-            </a>
-            <a href="https://www.linkedin.com/in/dwiastika" target="_blank" aria-label="LinkedIn">
+
+            <a href="https://www.linkedin.com/in/dwiastika"
+               target="_blank"
+               aria-label="LinkedIn">
                 <i class="fa-brands fa-linkedin-in"></i>
             </a>
-            <a href="mailto:dwi9astika@gmail.com" aria-label="Email">
+
+            <a href="mailto:dwi9astika@gmail.com"
+               aria-label="Email">
                 <i class="fa-regular fa-envelope"></i>
             </a>
 
@@ -162,75 +192,48 @@
 </section>
 
 
+<a href="https://wa.me/6283874780065"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Chat via WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
 <script>
-    const cards = document.querySelectorAll('.timeline-item');
     const modal = document.getElementById('eventModal');
     const titleEl = document.getElementById('modalTitle');
     const roleEl = document.getElementById('modalRole');
     const tasksEl = document.getElementById('modalTasks');
-
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            titleEl.textContent = card.dataset.title;
-            roleEl.textContent = card.dataset.role;
-            tasksEl.innerHTML = '';
-
-            card.dataset.tasks.split(';').forEach(task => {
-                if (!task.trim()) return;
-
-                // Cek apakah punya sub list
-                if (task.includes('|')) {
-                    const [mainText, subText] = task.split('|');
-
-                    const li = document.createElement('li');
-                    li.textContent = mainText.trim();
-
-                    const subUl = document.createElement('ul');
-                    subUl.classList.add('sub-list');
-
-                    subText.split(',').forEach(sub => {
-                        const subLi = document.createElement('li');
-                        subLi.textContent = sub.trim();
-                        subUl.appendChild(subLi);
-                    });
-
-                    li.appendChild(subUl);
-                    tasksEl.appendChild(li);
-                } else {
-                    const li = document.createElement('li');
-                    li.textContent = task.trim();
-                    tasksEl.appendChild(li);
-                }
-            });
-
-            modal.classList.add('active');
+    
+    function openEvent(el) {
+        titleEl.textContent = el.dataset.title;
+        roleEl.textContent = el.dataset.role;
+        tasksEl.innerHTML = '';
+    
+        el.dataset.tasks.split(';').forEach(task => {
+            const li = document.createElement('li');
+            li.textContent = task.trim();
+            tasksEl.appendChild(li);
         });
-    });
-
+    
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+        document.body.style.overflow = 'hidden';
+    }
+    
     function closeModal() {
         modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+        document.body.style.overflow = '';
     }
-
+    
     modal.addEventListener('click', e => {
         if (e.target === modal) closeModal();
     });
-</script>
-
-<script>
-    function openEvent(el) {
-    titleEl.textContent = el.dataset.title;
-    roleEl.textContent = el.dataset.role;
-    tasksEl.innerHTML = '';
-
-    el.dataset.tasks.split(';').forEach(task => {
-        const li = document.createElement('li');
-        li.textContent = task.trim();
-        tasksEl.appendChild(li);
+    
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeModal();
     });
-
-    modal.classList.add('active');
-}
-
 </script>
 </body>
 </html>

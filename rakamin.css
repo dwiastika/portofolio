@@ -1,0 +1,738 @@
+:root {
+    --navbar-height: 80px;
+}
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #0f172a;
+    background: #fff;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: hsl(210, 39%, 35%);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 30px 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.brand {
+    position: absolute;
+    left: 2rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 0 auto;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.nav-links a i {
+    display: none;
+}
+
+
+/* ================= GLOBAL ================= */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.section h2 {
+    font-size: 30px;
+    margin-bottom: 18px;
+    color: hsl(210, 39%, 35%);
+}
+
+.section h2::before {
+    content: '';
+    display: block;
+    width: 42px;
+    height: 4px;
+    background: hsl(210, 39%, 35%);
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.section p {
+    font-size: 15.5px;
+    color: #475569;
+}
+
+/* ================= HERO ================= */
+.project-hero {
+    position: relative;
+    height: 100vh;
+    padding-top: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, hsl(210, 39%, 35%), hsl(210, 39%, 25%));
+    color: #fff;
+    overflow: hidden;
+}
+
+.project-hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 320px;
+    height: 320px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.project-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -140px;
+    left: -140px;
+    width: 360px;
+    height: 360px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    filter: blur(90px);
+}
+
+.project-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.project-hero h1 {
+    font-size: 42px;
+    margin: 14px 0 10px;
+}
+
+.project-subtitle {
+    max-width: 700px;
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 26px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ================= CAMPAIGN DETAIL (NATURAL) ================= */
+
+.campaign-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: hsl(210, 39%, 35%);
+    margin-bottom: 14px;
+}
+
+.campaign-desc {
+    font-size: 15.5px;
+    color: #475569;
+    max-width: 880px;
+    margin-bottom: 28px;
+}
+
+.campaign-subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: hsl(210, 39%, 35%);
+    margin-bottom: 10px;
+}
+
+.campaign-list {
+    list-style: disc;
+    padding-left: 22px;
+    max-width: 880px;
+    margin-bottom: 26px;
+}
+
+.campaign-list li {
+    margin-bottom: 14px;
+    padding-left: 6px;
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #334155;
+}
+
+.campaign-hashtag {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* ================= TARGET AUDIENCE ================= */
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 30px;
+}
+
+.audience-box {
+    padding: 26px 28px;
+}
+
+.audience-box.full {
+    grid-column: span 2;
+    border-right: none;
+    border-bottom: none;
+    background: transparent;
+}
+
+.audience-box h3 {
+    font-size: 16.5px;
+    font-weight: 600;
+    color: hsl(210, 39%, 35%);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.audience-box ul {
+    list-style: disc;
+    padding-left: 18px;
+}
+
+.audience-box li {
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+.audience-box li::marker {
+    color: hsl(210, 39%, 35%);
+}
+
+/* ================= BUDGET SECTION ================= */
+
+.budget-section {
+    width: 100%;
+    background: #fff;
+}
+
+.budget-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 0px;
+}
+
+/* container lebih lebar dari default */
+.container-wide {
+    max-width: 1400px;   /* kunci utama full-width */
+    margin: 0 auto;
+    padding: 0 125px;
+}
+
+/* TABLE */
+.budget-table-wrap {
+    overflow-x: auto;
+}
+
+.budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    font-size: 13.5px;
+}
+
+.budget-table th {
+    background: hsl(210, 39%, 35%);
+    color: #fff;
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.budget-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.budget-table td[rowspan] {
+    background: #f8fafc;
+    font-weight: 600;
+}
+
+.budget-table tr:last-child td {
+    border-bottom: none;
+}
+
+.total-row td {
+    background: hsl(210, 15%, 92%);
+    font-weight: 600;
+}
+
+/* ================= KPI ================= */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 26px;
+    margin-top: 30px;
+}
+
+.kpi-card {
+    position: relative;
+    background: #fff;
+    padding: 28px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+    transition: transform .3s ease;
+}
+
+.kpi-card:hover {
+    transform: translateY(-6px);
+}
+
+.kpi-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        rgba(37,99,235,0.15),
+        transparent
+    );
+    opacity: 0;
+    transition: .3s ease;
+}
+
+.kpi-card:hover::before {
+    opacity: 1;
+}
+
+/* ================= RESULT ================= */
+.result-list {
+    margin-top: 16px;
+    padding-left: 20px;
+}
+
+.result-list li {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* ================= TOOLS ================= */
+.tool-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.tool-tags span {
+    padding: 6px 14px;
+    background: hsl(210, 15%, 92%);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* ================= GALLERY ================= */
+/* GRID UTAMA */
+.campaign-visual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* CARD */
+.campaign-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 22px 18px 26px;
+    text-align: center;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.1);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.campaign-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 26px 60px rgba(0,0,0,0.15);
+}
+
+/* PHONE FRAME */
+.phone-mockup {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.phone-mockup img {
+    max-height: 100%;
+    max-width: 260px;
+    object-fit: contain;
+}
+
+/* LABEL */
+.platform-label {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+/* ================= MODAL ================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+    z-index: 2000;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ================= BACK ================= */
+.back-link {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.back-link a {
+    font-weight: 600;
+    color: hsl(210, 39%, 35%);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.whatsapp-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 56px;
+    height: 56px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    z-index: 3000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.35);
+}
+
+@keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,.6); }
+    70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+.whatsapp-float {
+    animation: wa-pulse 2.5s infinite;
+}
+
+#footer {
+    width: 100%;
+    padding: 18px 0; /* lebih pendek */
+    background-color: hsl(210, 39%, 35%);
+    color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap; /* aman di mobile */
+}
+
+.footer-text {
+    font-size: 17px;
+    color: #fff;
+    margin: 0;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+/* ICON */
+.footer-content a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.footer-content a:hover {
+    background: #fff;
+    color: #111;
+    transform: translateY(-3px);
+}
+
+.footer-copy {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+
+/* =================================================
+   FULL MOBILE RESPONSIVE FIX
+================================================= */
+@media (max-width: 768px) {
+
+    /* ===== GLOBAL MOBILE RESET ===== */
+    body {
+        padding-bottom: 80px; /* ruang navbar bawah */
+    }
+
+    .container {
+        padding: 0 18px;
+    }
+
+    .section {
+        padding: 36px 0;
+    }
+
+    .section h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .section h2::before {
+        width: 32px;
+        height: 3px;
+        margin-bottom: 10px;
+    }
+
+    .section p {
+        font-size: 14.5px;
+        line-height: 1.65;
+    }
+
+    /* ===== NAVBAR MOBILE (BOTTOM) ===== */
+    header {
+        top: auto;
+        bottom: 0;
+        height: auto;
+        box-shadow: 0 -6px 18px rgba(0,0,0,0.18);
+    }
+
+    nav {
+        padding: 10px 0;
+        justify-content: center;
+    }
+
+    .brand {
+        display: none;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav-links li a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 11px;
+        gap: 4px;
+    }
+
+    .nav-links a i {
+        display: block;
+        font-size: 18px;
+    }
+
+    /* ===== HERO ===== */
+    .project-hero {
+        height: auto;
+        padding-top: 64px;
+        padding-bottom: 40px;
+        align-items: flex-start;
+    }
+
+    .project-label {
+        font-size: 11px;
+        letter-spacing: 1.4px;
+        margin-bottom: 10px;
+    }
+
+    .project-hero h1 {
+        font-size: 26px;
+        line-height: 1.25;
+        margin-bottom: 12px;
+    }
+
+    .project-subtitle {
+        font-size: 14.5px;
+        line-height: 1.6;
+        margin-bottom: 18px;
+    }
+
+    .project-meta {
+        flex-direction: column;
+        gap: 6px;
+        font-size: 12.5px;
+        opacity: 0.9;
+    }
+
+    /* ===== AUDIENCE GRID ===== */
+    .audience-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .audience-box {
+        padding: 18px;
+        border-radius: 14px;
+        background: #f8fafc;
+    }
+
+    .audience-box.full {
+        grid-column: span 1;
+    }
+
+    .audience-box h3 {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    /* ===== BUDGET ===== */
+    .container-wide {
+        padding: 0 18px;
+    }
+
+    .budget-table {
+        font-size: 12px;
+    }
+
+    /* ===== KPI ===== */
+    .kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .kpi-card {
+        padding: 22px;
+    }
+
+    /* ===== CAMPAIGN VISUAL ===== */
+    .campaign-visual-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .campaign-card {
+        padding: 18px;
+    }
+
+    .phone-mockup {
+        height: 240px;
+    }
+
+    .phone-mockup img {
+        max-width: 220px;
+    }
+
+    .platform-label {
+        font-size: 14px;
+    }
+
+    /* ===== FOOTER ===== */
+    #footer {
+        padding: 14px 0;
+    }
+
+    .footer-text {
+        font-size: 15px;
+    }
+
+    .footer-copy {
+        font-size: 12px;
+    }
+}
+

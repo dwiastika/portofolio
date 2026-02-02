@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -11,16 +12,22 @@ body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 }
+
 header {
     position: fixed;
     top: 0;
     width: 100%;
-    /* background-color: rgba(255, 255, 255, 0.98); */
     background-color: hsl(210, 39%, 35%);
     backdrop-filter: blur(15px);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
     z-index: 1000;
     transition: all 0.4s ease;
+}
+
+header.scrolled {
+    background-color: rgba(32, 70, 105, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 nav {
@@ -31,14 +38,6 @@ nav {
     max-width: 1400px;
     margin: 0 auto;
 }
-
-/* ================= NAVBAR SCROLL EFFECT ================= */
-header.scrolled {
-    background-color: rgba(32, 70, 105, 0.85); /* versi transparan dari biru kamu */
-    backdrop-filter: blur(12px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
 
 .brand {
     position: absolute;
@@ -549,6 +548,7 @@ svg {
     margin-bottom: 8px;
     margin-top: 30px;
     color: #0f172a;
+    text-align: left;
 }
 
 .cv-desc {
@@ -835,16 +835,6 @@ svg {
     }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .cert-gallery {
-        grid-auto-rows: 180px;
-    }
-    .cert-title {
-        font-size: 28px;
-    }
-}
-
 
 /* ================= FOOTER ================= */
 #footer {
@@ -1021,10 +1011,15 @@ svg {
     padding: 36px;
     border-radius: 26px;
     position: relative;
+
+    max-height: 90vh;
+    overflow-y: auto;
+    
     transform: translateY(30px) scale(.95);
     transition: transform .35s ease;
     box-shadow: 0 30px 80px rgba(0,0,0,.35);
 }
+
 
 .modal-overlay.active .modal-box {
     transform: translateY(0) scale(1);
@@ -1102,8 +1097,44 @@ svg {
 .modal-image img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
+}
+
+/* ===== IMAGE CONTAINER ===== */
+.modal-image {
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+/* MODE HERO (default) */
+.modal-image.hero {
+    max-height: 200px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.modal-image.hero img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
+
+/* MODE LOGO */
+.modal-image.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 36px 0 24px;
+}
+
+.modal-image.logo img {
+    max-width: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.9;
+}
+
 
 /* ================= PROJECTS ================= */
 .projects-section {
@@ -1131,6 +1162,7 @@ svg {
 }
 
 .project-card {
+    display: flex;
     background: #fff;
     border-radius: 22px;
     overflow: hidden;
@@ -1143,14 +1175,19 @@ svg {
     box-shadow: 0 28px 60px rgba(0,0,0,0.18);
 }
 
-.project-card img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
+.project-content {
+    padding: 24px 26px 28px; /* INI YANG HILANG */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 190px;
 }
 
-.project-content {
-    padding: 24px 26px 28px;
+.project-card span {
+    display: block;
+    margin-bottom: 12px;
+    color: hsl(210, 39%, 35%);
+    font-size: 14px;
 }
 
 .project-content h3 {
@@ -1167,18 +1204,12 @@ svg {
     margin-bottom: 10px;
 }
 
-.project-desc {
-    font-size: 14.5px;
-    line-height: 1.6;
-    color: #475569;
-    margin-bottom: 16px;
-}
-
 .project-link {
     font-size: 14px;
     font-weight: 600;
     color: hsl(210, 39%, 35%);
     transition: opacity 0.3s ease;
+    top: auto;
 }
 
 .project-link:hover {
@@ -1232,11 +1263,6 @@ svg {
     }
 
     /* ---------- ABOUT ---------- */
-    .row {
-        padding-top: 100px;
-        padding-bottom: 60px;
-    }
-
     .about1 img {
         width: 260px;
         height: 260px;
@@ -1245,10 +1271,6 @@ svg {
     .about2 {
         flex-basis: 100%;
         margin-top: 40px;
-    }
-
-    .sub-title {
-        font-size: 30px;
     }
 
     /* ---------- SKILLS ---------- */
@@ -1347,12 +1369,14 @@ svg {
     }
 
     .sub-title {
+        margin-top: -30px;
         font-size: 26px;
     }
 
     .about2 p,
     .p2 {
-        font-size: 14.5px;
+        font-size: 14px;
+        text-align: justify;
     }
 
     /* ---------- SKILLS ---------- */
@@ -1411,19 +1435,55 @@ svg {
 
     /* ---------- CERTIFICATE ---------- */
     .cert-gallery {
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 22px;
     }
 
     .cert-title {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .cert-subtitle {
         font-size: 14px;
     }
 
+    .cert-card{
+        aspect-ratio: auto;
+    }
+    
+    .cert-card img {
+        height: auto;
+        padding: 12px;
+    }
+
     /* ---------- FOOTER ---------- */
     .footer-text {
         font-size: 14px;
+    }
+
+    .whatsapp-float {
+        bottom: 90px;
+        right: 16px;
+    }
+
+    section {
+        scroll-margin-top: 20px;
+        scroll-margin-bottom: 90px;
+    }
+
+    .scroll-indicator {
+        bottom: 80px; /* BUKAN 40px */
+        font-size: 14px;
+    }
+    
+    .row {
+        flex-direction: column;
+        justify-content: center; /* center vertical */
+        align-items: center;     /* center horizontal */
+        text-align: center;
+    }
+
+    .about1 {
+        margin-bottom: 24px; /* jarak ke teks */
     }
 }
