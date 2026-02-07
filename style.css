@@ -933,56 +933,58 @@ svg {
 /* ================= WORK EXPERIENCE ================= */
 .work-section {
     scroll-margin-top: 100px;
-    padding: 70px 6%;
+    padding: 90px 6%;
     background: #f8fafc;
 }
 
 .section-title {
     text-align: center;
-    font-size: 34px;
-    margin-bottom: 50px !important;
-    color: hsl(210, 39%, 35%);
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 70px !important;
+    color: #0f172a;
+    letter-spacing: -0.5px;
 }
 
 .work-grid {
     max-width: 1100px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 36px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
 .work-card {
+    position: relative;
     background: #fff;
-    padding: 34px 30px;
-    border-radius: 22px;
-    text-align: center;
+    padding: 36px 32px;
+    border-radius: 20px;
     cursor: pointer;
-    box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
     transition: all .35s ease;
+    border-top: 4px solid hsl(210, 39%, 35%);
 }
 
 .work-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 28px 60px rgba(0,0,0,0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
 }
 
 .work-card h3 {
-    font-size: 18px;
-    margin-bottom: 6px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #020617;
 }
 
 .work-card span {
+    display: block;
     font-size: 13px;
     font-weight: 600;
+    line-height: 1.5;
     color: hsl(210, 39%, 35%);
 }
 
-.work-card p {
-    margin-top: 14px;
-    font-size: 14.5px;
-    color: #475569;
-}
 
 /* ================= MODAL ================= */
 .modal-overlay {
