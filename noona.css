@@ -1,0 +1,390 @@
+:root {
+    --navbar-height: 80px;
+    --primary: hsl(210, 39%, 35%);
+    --soft-bg: hsl(210, 15%, 95%);
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #0f172a;
+    line-height: 1.7;
+    background: #fff;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    background: var(--primary);
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1400px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.brand {
+    position: absolute;
+    left: 2rem;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+/* GLOBAL */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 24px;
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.section h2 {
+    font-size: 30px;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.section h2::before {
+    content: '';
+    width: 42px;
+    height: 4px;
+    background: var(--primary);
+    display: block;
+    border-radius: 99px;
+    margin-bottom: 14px;
+}
+
+.section p {
+    font-size: 15.5px;
+    color: #475569;
+}
+
+/* HERO */
+.project-hero {
+    height: 100vh;
+    padding-top: var(--navbar-height);
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #355c7d, #2a3f54);
+    color: #fff;
+}
+
+.project-hero h1 {
+    font-size: 44px;
+    margin: 16px 0 10px;
+}
+
+.project-label {
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.project-subtitle {
+    max-width: 700px;
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+.project-meta {
+    margin-top: 28px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* GRID INFO */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 30px;
+}
+
+.info-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+.info-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* LIST */
+.list {
+    padding-left: 20px;
+    margin-top: 14px;
+}
+
+.list li {
+    margin-bottom: 10px;
+}
+
+/* TAGS */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tags span {
+    background: var(--soft-bg);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.keyword-group {
+    margin-top: 16px;
+    display: grid;
+    gap: 14px;
+}
+
+.keyword-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.keyword-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f172a;
+    white-space: nowrap;
+    padding-top: 6px;
+}
+
+/* Key Finding */
+.insight-list {
+    margin-top: 20px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.insight-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.insight-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: hsl(210, 39%, 35%);
+}
+
+.insight-list strong {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* Table Content Pillar */
+.budget-table-wrap {
+    overflow-x: auto;
+}
+
+.budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    font-size: 13.5px;
+}
+
+.budget-table th {
+    background: hsl(210, 39%, 35%);
+    color: #fff;
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.budget-table td {
+    background: transparent;
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #334155;
+    vertical-align: middle;
+}
+
+/* HANYA Funnel Stage (kolom kiri) */
+.budget-table td[rowspan]:first-child {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Pastikan kolom lain bersih */
+.budget-table td[rowspan]:not(:first-child) {
+    background: transparent;
+    font-weight: normal;
+}
+
+.budget-table td[rowspan] {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.budget-table td {
+    border-right: 1px solid #e5e7eb;
+}
+
+.table-caption {
+    margin-top: 14px;
+    padding-top: 12px;
+    font-size: 16px !important;
+    line-height: 1.6;
+    color: #64748b;
+    text-align: justify;
+}
+
+/* GALLERY */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery img {
+    border-radius: 18px;
+    cursor: pointer;
+    transition: .35s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 18px;
+}
+
+/* BACK */
+.back-link {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.back-link a {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 30px;
+}
+
+.audience-box {
+    padding: 26px 28px;
+}
+
+.audience-box:nth-child(2n) {
+    border-right: none;
+}
+
+.audience-box.full {
+    grid-column: span 2;
+    border-right: none;
+    border-bottom: none;
+    background: transparent;
+}
+
+.audience-box h3 {
+    font-size: 16.5px;
+    font-weight: 600;
+    color: hsl(210, 39%, 35%);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.audience-box ul {
+    list-style: disc;
+    padding-left: 18px;
+}
+
+.audience-box li {
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+.audience-box li::marker {
+    color: hsl(210, 39%, 35%);
+}
