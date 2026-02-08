@@ -26,40 +26,66 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    height: var(--navbar-height);
-    background: var(--primary);
+    background-color: hsl(210, 39%, 35%);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
     z-index: 1000;
+    transition: all 0.4s ease;
+}
+
+header.scrolled {
+    background-color: rgba(32, 70, 105, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 nav {
-    max-width: 1400px;
-    margin: auto;
-    height: 100%;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
+    padding: 30px 30px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .brand {
     position: absolute;
     left: 2rem;
-    color: #fff;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.4s ease;
+}
+
+.brand:hover {
+    color: #2980b9;
 }
 
 .nav-links {
+    list-style: none;
     display: flex;
     gap: 3rem;
-    list-style: none;
+    margin: 0 auto;
 }
 
-.nav-links a {
+.nav-links li a {
+    text-decoration: none;
     color: #fff;
-    font-size: 0.95rem;
+    font-weight: 400;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
+.nav-links li a:hover {
+    color: #3498db;
+    transform: translateY(-1px);
+}
+
+.nav-links a i {
+    display: none;
+}
 /* GLOBAL */
 .container {
     max-width: 1100px;
@@ -547,7 +573,7 @@ nav {
 
     /* Hero */
     .project-hero {
-        height: 87.9vh !important;
+        height: 90.5vh !important;
         padding: 90px 0 70px;
         text-align: left;
     }
@@ -671,7 +697,6 @@ nav {
         grid-column: span 1;
     }
 
-    /* Table */
      /* Table */
      .budget-container > h2{
         text-align: left !important;
@@ -701,7 +726,7 @@ nav {
 
     /* Footer */
     #footer {
-        margin-bottom: 78px !important;
+        margin-bottom: 65px !important;
     }
 
     .footer-text {
