@@ -10,6 +10,10 @@ body {
     color: #0f172a;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a { text-decoration: none; }
 
 /* ================= NAVBAR ================= */
@@ -51,7 +55,7 @@ nav {
 .nav-links li a {
     text-decoration: none;
     color: #fff;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .nav-links a i {

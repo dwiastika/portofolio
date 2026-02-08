@@ -73,8 +73,7 @@ nav {
 .nav-links li a {
     text-decoration: none;
     color: #fff;
-    font-weight: 400;
-    font-size: 1rem;
+    font-size: 16px;
     transition: color 0.3s ease;
 }
 
@@ -389,23 +388,6 @@ nav {
     transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.campaign-card:nth-child(3) {
-    grid-column: 1 / -1;        /* span full row */
-    max-width: 760px;           /* biar nggak kepanjangan */
-    margin: 0 auto;             /* center */
-    padding: 26px 28px 30px;
-}
-
-.campaign-card:nth-child(3) .phone-mockup {
-    height: 380px;              /* lebih tinggi */
-}
-
-.campaign-card:nth-child(3) .phone-mockup img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
 .campaign-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 26px 60px rgba(0,0,0,0.15);
@@ -419,47 +401,6 @@ nav {
     padding: 0 8px;
 }
 
-.platform-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 14px;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 700; /* lebih tebal */
-    border-radius: 999px;
-    color: #fff;
-    letter-spacing: .2px;
-}
-
-/* icon */
-.platform-badge i {
-    font-size: 15px;
-}
-
-.platform-badge.website {
-    background: linear-gradient(
-        135deg,
-        #0f172a,
-        #334155
-    );
-}
-
-/* TikTok */
-.platform-badge.tiktok {
-    background: #000;
-}
-
-/* Instagram */
-.platform-badge.instagram {
-    background: linear-gradient(
-        135deg,
-        #f58529,
-        #dd2a7b,
-        #8134af
-    );
-}
-
 /* PHONE FRAME */
 .phone-mockup {
     height: 300px;
@@ -470,7 +411,7 @@ nav {
 
 .phone-mockup img {
     max-height: 100%;
-    max-width: 260px;
+    max-width: 380px;
     object-fit: contain;
 }
 
