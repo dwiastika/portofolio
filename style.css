@@ -1529,4 +1529,8 @@ svg {
     .about1 {
         margin-bottom: 24px; /* jarak ke teks */
     }
+
+    *{
+        text-decoration: none;
+    }
 }
