@@ -372,6 +372,38 @@ nav {
     color: var(--primary);
 }
 
+.project-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    font-weight: 600;
+    color: hsl(210, 39%, 35%);
+    text-decoration: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Optional: sedikit penekanan arah */
+.nav-link.back {
+    text-align: left;
+}
+
+.nav-link.next {
+    text-align: right;
+}
+
 .campaign-visual-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -13,44 +13,44 @@
 
 <body>
 
-    <header>
-        <nav>
-            <a class="brand" href="index.html#">Dwi Astika</a>
-    
-            <ul class="nav-links">
-                <li>
-                    <a href="index.html#hero">
-                        <i class="fa-solid fa-house"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html#about">
-                        <i class="fa-solid fa-user"></i>
-                        <span>About</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html#experience">
-                        <i class="fa-solid fa-briefcase"></i>
-                        <span>Experience</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html#projects">
-                        <i class="fa-solid fa-folder-open"></i>
-                        <span>Projects</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html#certificates">
-                        <i class="fa-solid fa-certificate"></i>
-                        <span>Certificate</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <nav>
+        <a class="brand" href="index.html#">Dwi Astika</a>
+
+        <ul class="nav-links">
+            <li>
+                <a href="index.html#hero">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#about">
+                    <i class="fa-solid fa-user"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#experience">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#projects">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html#certificates">
+                    <i class="fa-solid fa-certificate"></i>
+                    <span>Certificate</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
 <!-- HERO -->
 <section class="project-hero">
@@ -73,9 +73,25 @@
 <section class="section container">
     <h2>Project Overview</h2>
     <p>
-        Yup’s Gurt is an online-based yogurt drink business project developed to address low yogurt consumption in Indonesia, driven by sour taste perception and limited product variety. Leveraging healthy lifestyle trends and marketing digital. 
+        This project focused on developing an innovative yogurt product to address low yogurt consumption in Indonesia, despite its proven health benefits. Consumer research indicated that sour taste perception and limited product differentiation reduced consumer interest.
          <br> <br> Leveraging healthy lifestyle trends and digital marketing strategies.
     </p>
+
+    <h3 style="margin-top: 50px; color: hsl(210, 39%, 35%); font-size: 24px;">The Product Innovation Focused On:</h3>
+    <ul class="insight-list">
+        <li>
+            Reducing sour taste perception through the addition of crunchy cereal textures
+        </li>
+        <li>
+            Offering multiple flavor variants, including Froot Loops, Honey Stars, Corn Flakes, and Milo Crunch
+        </li>
+        <li>
+            Using natural sweeteners such as honey and fruits
+        </li>
+        <li>
+            Creating a yogurt product that is both healthy and appealing to children and young consumers
+        </li>
+    </ul>
 </section>
 
 <!-- Value Proposition -->
@@ -179,7 +195,7 @@
 </section>
 
 <div class="back-link">
-    <a href="index.html#projects">← Back to Projects</a>
+    <a href="noona_closet.html">← Back to Projects</a>
 </div>
 
 <section id="footer">
@@ -207,26 +223,27 @@
     </div>
 </section>
 
-<a href="https://wa.me/6283874780065"
-   class="whatsapp-float"
+<a href="https://wa.me/623874780065"
+   class="whatsapp-float no-transition"
    target="_blank"
+   rel="noopener noreferrer"
    aria-label="Chat via WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 <script>
-const imgs = document.querySelectorAll('.gallery img');
-const modal = document.getElementById('imgModal');
-const modalImg = document.getElementById('modalImg');
+    const imgs = document.querySelectorAll('.gallery img');
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
 
-imgs.forEach(img => {
-    img.onclick = () => {
-        modalImg.src = img.src;
-        modal.classList.add('active');
-    }
-});
+    imgs.forEach(img => {
+        img.onclick = () => {
+            modalImg.src = img.src;
+            modal.classList.add('active');
+        }
+    });
 
-modal.onclick = () => modal.classList.remove('active');
+    modal.onclick = () => modal.classList.remove('active');
 </script>
 
 </body>
