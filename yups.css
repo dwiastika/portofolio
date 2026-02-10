@@ -652,6 +652,7 @@ nav {
     }
 
     .phone-mockup {
+        max-width: auto;
         height: 260px;
     }
 
