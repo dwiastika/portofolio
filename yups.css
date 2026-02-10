@@ -11,11 +11,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     color: #0f172a;
@@ -404,18 +399,9 @@ nav {
 }
 
 .phone-mockup img {
+    max-height: 100%;
     max-width: 500px;
     object-fit: contain;
-    max-width: 100%;
-    height: auto;
-}
-
-.campaign-visual-grid,
-.campaign-card,
-.phone-mockup,
-.section {
-    max-width: 100%;
-    overflow-x: hidden;
 }
 
 /* LABEL */
@@ -517,7 +503,7 @@ nav {
 
     /* Hero */
     .project-hero {
-        height: 95.3vh !important;
+        height: 90.5vh !important;
         padding: 90px 0 70px;
         text-align: left;
     }
@@ -529,6 +515,11 @@ nav {
 
     .project-subtitle {
         font-size: 15px;
+    }
+
+    .project-meta {
+        gap: 10px;
+        font-size: 13px;
     }
 
     .container,
@@ -579,13 +570,6 @@ nav {
         font-size: 18px;
     }
 
-    .project-meta {
-        display: flex;
-        flex-direction: column !important;
-        align-items: flex-start;
-        gap: 6px;
-    }
-
     /* Hero */
     .project-hero {
         height: 91vh;
@@ -600,6 +584,11 @@ nav {
 
     .project-subtitle {
         font-size: 15px;
+    }
+
+    .project-meta {
+        gap: 10px;
+        font-size: 13px;
     }
 
     /* Section */
