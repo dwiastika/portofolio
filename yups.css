@@ -299,65 +299,54 @@ nav {
     font-weight: 600;
 }
 
-/* Table Content Pillar */
+/* ===== Content Pillar Table ===== */
+
 .budget-table-wrap {
+    width: 100%;
     overflow-x: auto;
+    margin-top: 24px;
 }
 
 .budget-table {
     width: 100%;
     border-collapse: collapse;
-    background: #fff;
-    border-radius: 18px;
+    min-width: 900px;
+    background: #ffffff;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-    font-size: 13.5px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
-.budget-table th {
+/* Header */
+.budget-table thead th {
     background: hsl(210, 39%, 35%);
-    color: #fff;
-    padding: 14px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
     text-align: left;
-    font-weight: 600;
+    padding: 14px 16px;
     white-space: nowrap;
+    text-align: center;
 }
 
-.budget-table td {
-    background: transparent;
-    padding: 14px;
-    border-bottom: 1px solid #e5e7eb;
+/* Body cells */
+.budget-table tbody td {
+    font-size: 14px;
     color: #334155;
-    vertical-align: middle;
-}
-
-.budget-table td[rowspan]:first-child {
-    background: #f8fafc;
-    font-weight: 600;
-    color: #0f172a;
-}
-
-/* Pastikan kolom lain bersih */
-.budget-table td[rowspan]:not(:first-child) {
-    background: transparent;
-    font-weight: normal;
-}
-
-.budget-table td[rowspan] {
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.budget-table td {
+    padding: 14px 16px;
+    vertical-align: top;
+    border-left: 1px solid #e5e7eb;
     border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+    line-height: 1.6;
 }
 
-.table-caption {
-    margin-top: 14px;
-    padding-top: 12px;
-    font-size: 16px !important;
-    line-height: 1.6;
-    color: #64748b;
-    text-align: justify;
+/* Funnel stage column */
+.budget-table tbody td:first-child {
+    /* font-weight: 600; */
+    /* color: hsl(210, 39%, 35%); */
+    white-space: nowrap;
 }
 
 /* BACK */
@@ -639,16 +628,14 @@ nav {
     }
 
      /* Table */
-     .budget-container > h2{
-        text-align: left !important;
-    }
-    .budget-table {
-        font-size: 13px;
+     .budget-table {
+        min-width: 700px;
     }
 
-    .budget-table th,
-    .budget-table td {
-        padding: 10px;
+    .budget-table thead th,
+    .budget-table tbody td {
+        font-size: 13px;
+        padding: 12px;
     }
 
     .container-wide {
