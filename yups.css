@@ -399,10 +399,9 @@ nav {
 }
 
 .phone-mockup img {
-    width: 80vw;          /* pakai lebar layar */
-    max-width: 320px;     /* batas aman */
-    height: auto;
-    object-fit: contain;
+    max-height: 100%;
+    max-width: 260px;
+    object-fit: cover;
 }
 
 /* LABEL */
@@ -652,9 +651,8 @@ nav {
         gap: 28px;
     }
 
-    .phone-mockup img {
-        width: 90vw;
-        max-width: 340px;
+    .phone-mockup {
+        height: 260px;
     }
 
     /* Footer */
