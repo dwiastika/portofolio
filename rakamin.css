@@ -758,7 +758,10 @@ nav {
     }
 
     .project-meta {
-        gap: 10px;
+        display: flex;
+        flex-direction: column !important;
+        align-items: flex-start;
+        gap: 6px;
         font-size: 13px;
     }
 
@@ -850,7 +853,7 @@ nav {
 
     /* Footer */
     #footer {
-        margin-bottom: 65.2px !important;
+        margin-bottom: 65.7px !important;
     }
 
     .footer-text {

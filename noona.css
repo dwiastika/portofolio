@@ -605,7 +605,7 @@ nav {
 
     /* Hero */
     .project-hero {
-        height: 87.9vh !important;
+        height: 90.5vh !important;
         padding: 90px 0 70px;
         text-align: left;
     }
@@ -617,11 +617,6 @@ nav {
 
     .project-subtitle {
         font-size: 15px;
-    }
-
-    .project-meta {
-        gap: 10px;
-        font-size: 13px;
     }
 
     .container,
@@ -689,7 +684,10 @@ nav {
     }
 
     .project-meta {
-        gap: 10px;
+        display: flex;
+        flex-direction: column !important;
+        align-items: flex-start;
+        gap: 6px;
         font-size: 13px;
     }
 
@@ -758,7 +756,7 @@ nav {
 
     /* Footer */
     #footer {
-        margin-bottom: 78px !important;
+        margin-bottom: 65px !important;
     }
 
     .footer-text {
