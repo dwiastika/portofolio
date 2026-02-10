@@ -364,14 +364,14 @@ nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 /* CARD */
 .campaign-card {
     background: #fff;
     border-radius: 24px;
-    padding: 22px 18px 26px;
+    padding: 10px 10px 26px;
     text-align: center;
     box-shadow: 0 18px 45px rgba(0,0,0,0.1);
     transition: transform .3s ease, box-shadow .3s ease;
@@ -400,8 +400,8 @@ nav {
 
 .phone-mockup img {
     max-height: 100%;
-    max-width: 500px;
-    object-fit: contain;
+    max-width: 350px;
+    object-fit: cover;
 }
 
 /* LABEL */
@@ -503,7 +503,7 @@ nav {
 
     /* Hero */
     .project-hero {
-        height: 90.5vh !important;
+        height: 95.5vh !important;
         padding: 90px 0 70px;
         text-align: left;
     }
@@ -587,7 +587,10 @@ nav {
     }
 
     .project-meta {
-        gap: 10px;
+        display: flex;
+        flex-direction: column !important;
+        align-items: flex-start;
+        gap: 6px;
         font-size: 13px;
     }
 
@@ -654,7 +657,7 @@ nav {
 
     /* Footer */
     #footer {
-        margin-bottom: 65px !important;
+        margin-bottom: 66px !important;
     }
 
     .footer-text {
