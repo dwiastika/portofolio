@@ -91,7 +91,7 @@
                     </div>
                     
                     <div class="tab-contents" id="Skills">
-                        <p class="skills-hint">Click for More Details</p>
+                        <p class="skills-hint">Click For More Details</p>
                         <ul class="skills-container">
                             <li class="skill-item" data-skill="analytics">
                                 <div class="skill-header">
@@ -252,7 +252,8 @@
                  data-image="image/rakamin_logo.png"
                  data-tasks="Developed the “Radiance Partner Program” digital campaign strategy focused on acquiring and retaining Jakmall’s dropship partners in the Health & Beauty category.;Planned and simulated cross-platform media execution across TikTok Ads, Meta Ads, and Google Search Ads, supported by a proposed Rp50M budget allocation and KPI benchmarks for each funnel stage.;Conducted audience and buyer persona analysis to identify key segments, pain points, and value drivers as the basis for targeted campaign messaging.;Mapped a full-funnel campaign timeline—from awareness to retention—ensuring alignment between weekly goals, content assets, and performance objectives."
                  data-tools="Google Trends, Google Slides, Canva, Microsoft Excel"
-                 data-skills="Strategic Planning, Funnel Mapping Creative Campaign Ideation, Audience Analysis">
+                 data-skills="Strategic Planning, Funnel Mapping Creative Campaign Ideation, Audience Analysis"
+                 data-gallery="">
                 <h3>Jakmall x Rakamin Academy</h3>
                 <p class="work-role">
                     Campaign & Digital Performance Officer
@@ -268,10 +269,12 @@
                  data-title="Noona Closet"
                  data-role="Crew Booth Freelance · August 2024 - July 2025"
                  data-desc="Focused on customer database enrichment and reporting."
-                 data-image=""
+                 data-image="image/noona_logo.png"
                  data-tasks="Achieved top sales performance with a 300% increase in sales through proactive engagement and responsive customer service.;Responsible for handling sales transactions and ensuring accurate daily reporting.;Managed booth display arrangement and inventory to ensure consistent product availability.;Represented the brand professionally to build brand awareness."
                  data-tools=""
-                 data-skills="Sales Performance Optimization, Customer Engagement & Persuasive Communication, Sales Data Handling & Reporting Accuracy">
+                 data-skills="Sales Performance Optimization, Customer Engagement & Persuasive Communication, Sales Data Handling & Reporting Accuracy"
+                 data-gallery="image/noona_hero.png"
+                 data-image-mode="logo-large">
                 <h3>Noona Closet</h3>
                 <p class="work-role">
                     Crew Booth Freelance
@@ -290,7 +293,8 @@
                  data-image="image/bina_pertiwi_logo.png"
                  data-tasks="Optimized the customer database by adding 1,070 palm oil companies in Indonesia, resulting in a 91% increase in potential customer conversion.;Compiled a comprehensive report on the development of the palm oil industry, serving as the basis for strategic business expansion recommendations.;Conducted data analysis and visualization related to the coverage area of the palm oil industry to identify sales opportunities and optimize marketing territory."
                  data-tools="Microsoft Word, Microsoft Excel, Canva, Tableu"
-                 data-skills="Strategic Sales Planning, Market Research, Communication Skill">
+                 data-skills="Strategic Sales Planning, Market Research, Communication Skill"
+                 data-gallery="image/bina_pertiwi_hero.png">
                 <h3>PT Bina Pertiwi</h3>
                 <p class="work-role">
                     Sales Management Internship
@@ -329,6 +333,11 @@
 
             <h4 id="skillsTitle">Skills</h4>
             <div class="tool-tags" id="modalSkills"></div>
+
+            <h4 id="PhotoTitle">Work Highlight</h4>
+            <div class="modal-gallery" id="modalGalleryWrap">
+                <img id="modalGalleryImage" src="" alt="">
+            </div>
 
     
         </div>
@@ -451,9 +460,6 @@
             });
         }
     </script>
-        
-        
-        
 
     <script>
         const tabLinks = document.querySelectorAll(".tab-links");
@@ -627,6 +633,9 @@
     const toolsTitle = document.getElementById('toolsTitle');
     const skillsTitle = document.getElementById('skillsTitle');
     const imageWrap = document.getElementById('modalImageWrap');
+    const GalleryWrap = document.getElementById('modalGalleryWrap');
+    const galleryEl = document.getElementById('modalGalleryImage');
+    const galleryTitle = document.getElementById('PhotoTitle');
     
     cards.forEach(card => {
         card.addEventListener('click', () => {
@@ -637,14 +646,16 @@
             imageEl.src = card.dataset.image;
             imageEl.alt = card.dataset.title;
 
-            imageWrap.classList.remove('logo', 'hero');
+            imageWrap.classList.remove('logo', 'hero', 'logo-large');
 
-// AUTO MODE DETECTION
-if (card.dataset.image.toLowerCase().includes('logo')) {
-    imageWrap.classList.add('logo');
-} else {
-    imageWrap.classList.add('hero');
-}
+            // AUTO MODE DETECTION
+            if (card.dataset.imageMode === 'logo-large') {
+                imageWrap.classList.add('logo-large');
+            } else if (card.dataset.image.toLowerCase().includes('logo')) {
+                imageWrap.classList.add('logo');
+            } else {
+                imageWrap.classList.add('hero');
+            }
     
             tasksEl.innerHTML = '';
             card.dataset.tasks.split(';').forEach(task => {
@@ -683,6 +694,36 @@ if (card.dataset.image.toLowerCase().includes('logo')) {
             } else {
                 skillsTitle.style.display = 'none';
                 skillsEl.style.display = 'none';
+            }
+
+            // ===== GALLERY =====
+            if (card.dataset.gallery && card.dataset.gallery.trim() !== '') {
+                galleryTitle.style.display = 'block';
+                GalleryWrap.style.display = 'block';
+
+                galleryEl.src = card.dataset.gallery;
+                galleryEl.alt = card.dataset.title + " gallery";
+            } else {
+                galleryTitle.style.display = 'none';
+                GalleryWrap.style.display = 'none';
+            }
+
+            const galleryData = card.dataset.gallery;
+
+            if (galleryData && galleryData.trim() !== "") {
+
+                galleryTitle.style.display = "block";
+                GalleryWrap.style.display = "block";
+
+                galleryEl.src = galleryData;
+                galleryEl.alt = card.dataset.title + " gallery";
+
+            } else {
+
+                galleryTitle.style.display = "none";
+                GalleryWrap.style.display = "none";
+
+                galleryEl.src = ""; // reset biar image lama ga kebawa
             }
 
             modal.classList.add('active');
