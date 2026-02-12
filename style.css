@@ -245,11 +245,10 @@ nav {
     height: 325px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: 50% 50%;
     background-color: hsl(210, 39%, 35%);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18),
     0 12px 30px rgba(0, 0, 0, 0.12);
-    border: 4px solid hsl(210, 39%, 40%);
+    border: 4px solid hsl(210, 39%, 40%); 
 }
 
 .about1 img:hover {

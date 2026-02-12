@@ -140,7 +140,7 @@ nav {
 }
 
 .project-subtitle {
-    max-width: 700px;
+    max-width: 600px;
     font-size: 17px;
     opacity: 0.9;
 }
@@ -154,70 +154,74 @@ nav {
     opacity: 0.9;
 }
 
-/* GRID INFO */
-.info-grid {
+.innovation-section {
+    position: relative;
+    margin-top: 50px;
+    padding-right: 320px;
+}
+
+.innovation-title {
+    color: hsl(210, 39%, 35%);
+    font-size: 24px;
+}
+
+.innovation-img-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 260px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.innovation-img-right img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.innovation-img-right figcaption {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+/* Marketing Segmentetion */
+.target-title {
+    font-size: 24px;
+    color: hsl(210, 39%, 35%);
+    margin-bottom: 25px;
+}
+
+.target-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-    margin-top: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
 }
 
-.info-card {
-    background: #fff;
-    padding: 28px;
-    border-radius: 20px;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+.target-box {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 
+        0 10px 25px rgba(15, 23, 42, 0.08),
+        0 4px 10px rgba(15, 23, 42, 0.05);
 }
 
-.info-card h3 {
+.target-box h4 {
+    font-size: 16px;
     margin-bottom: 10px;
-    font-size: 18px;
+    color: hsl(210, 39%, 35%);
 }
 
-/* LIST */
-.list {
-    padding-left: 20px;
-    margin-top: 14px;
+.target-box ul {
+    padding-left: 18px;
 }
 
-.list li {
-    margin-bottom: 10px;
-}
-
-/* TAGS */
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.tags span {
-    background: var(--soft-bg);
-    padding: 6px 14px;
-    border-radius: 999px;
-    font-size: 13px;
-    font-weight: 500;
-}
-
-.keyword-group {
-    margin-top: 16px;
-    display: grid;
-    gap: 14px;
-}
-
-.keyword-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.keyword-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: #0f172a;
-    white-space: nowrap;
-    padding-top: 6px;
+.target-box li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #334155;
 }
 
 /* Audience */
@@ -400,7 +404,7 @@ nav {
 
 .phone-mockup img {
     max-height: 100%;
-    max-width: 260px;
+    max-width: 350px;
     object-fit: cover;
 }
 
@@ -616,6 +620,22 @@ nav {
         padding-left: 20px;
     }
 
+    .innovation-section {
+        padding-right: 0;
+    }
+
+    .innovation-img-right {
+        position: static;
+        display: block;
+        margin: 20px auto;
+        width: 80%;
+    }
+
+    /* Marketing Segmentation */
+    .target-grid {
+        grid-template-columns: 1fr;
+    }
+
     .campaign-list,
     .insight-list {
         padding-left: 24px;
@@ -651,8 +671,8 @@ nav {
         gap: 28px;
     }
 
-    .phone-mockup {
-        height: 260px;
+    .phone-mockup img {
+        max-width: 320px !important;
     }
 
     /* Footer */
