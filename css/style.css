@@ -87,7 +87,7 @@
 
 .row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     max-width: 1200px;
@@ -95,14 +95,15 @@
     min-height: 100vh;
     padding-top: 120px;
     padding-bottom: 80px;
+    gap: 120px;
 }
 
 .about1 {
-    flex-basis: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    flex: 0 0 325px;
 }
 
 .about1 img {
@@ -121,9 +122,9 @@
 }
 
 .about2 {
-    flex-basis: 65%;
     min-height: 420px;
     position: relative;
+    flex: 1;
 }
 
 .about2 p {
