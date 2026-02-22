@@ -4,405 +4,396 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="./components/style-components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <script src="js/loader.js"></script>
     <script src="js/components.js"></script>
     <title>Dwi Astika Portofolio</title>
 </head>
+
 <body>
     
-    <div id="navbar"></div>
+    <header>
+        <div id="navbar"></div>
+    </header>
+    
+    <main>
+        <!-- ================= Hero ================= -->
+        <section id="hero">
+            <h1>Hi I'm Dwi Astika</h1>
+            <p>Sales & Marketing Support | Digital Marketing | Administration</p>
+            <div class="scroll-indicator" onclick="scrollToAbout()">
+                <span>Scroll down to explore my portfolio</span>
+                <i class="fa-solid fa-angles-down"></i>
+            </div>        
+        </section>
 
-    <section id="hero">
-        <h1>Hi I'm Dwi Astika</h1>
-        <p>Sales & Marketing Support | Digital Marketing | Administration</p>
-        <div class="scroll-indicator" onclick="scrollToAbout()">
-            <span>Scroll down to explore my portfolio</span>
-            <i class="fa-solid fa-angles-down"></i>
-        </div>        
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about1">
-                    <img src="image/profile.jpeg" alt="Dwi Astika">
-                </div>
-                <div class="about2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>I'm Dwi Astika, a Management graduate with experience in sales, marketing, and administration. I am skilled in market research, strategic planning, creative branding, and data-driven decision-making.</p>
-                    <p class="p2">I also have growing expertise in digital marketing, supported by a BNSP Digital Marketing certification and several intensive bootcamps that provided hands-on experience in analyzing audience insights, optimizing content, and improving campaign performance.
-                    </p>
-                    <p class="p2">Adaptable in dynamic work environments, I bring strong communication, team coordination, and problem-solving skills to support business growth. This portfolio showcases my skills, projects, and the values that guide my professional journey.</p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-links" onclick="openLinks('Education')">Education</p>
-                        <p class="tab-links " onclick="openLinks('Skills')">Skills</p>
-                        <p class="tab-links " onclick="openLinks('Tools')">Tools</p>
-                        <p class="tab-links " onclick="openLinks('cv')">Download CV</p>
+        <!-- ================= About ================= -->
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about1">
+                        <img src="image/profile.jpeg" alt="Dwi Astika">
                     </div>
-                    <div class="tab-contents active-tab" id="Education">
-                        <div class="education-item">
-                            <h4>2020 - 2024</h4>
-                            <p>Trilogi University | Management | GPA 3.63</p>
+                    <div class="about2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>I'm Dwi Astika, a Management graduate with experience in sales, marketing, and administration. I am skilled in market research, strategic planning, creative branding, and data-driven decision-making.</p>
+                        <p class="p2">I also have growing expertise in digital marketing, supported by a BNSP Digital Marketing certification and several intensive bootcamps that provided hands-on experience in analyzing audience insights, optimizing content, and improving campaign performance.
+                        </p>
+                        <p class="p2">Adaptable in dynamic work environments, I bring strong communication, team coordination, and problem-solving skills to support business growth. This portfolio showcases my skills, projects, and the values that guide my professional journey.</p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-links" onclick="openLinks('Education')">Education</p>
+                            <p class="tab-links " onclick="openLinks('Skills')">Skills</p>
+                            <p class="tab-links " onclick="openLinks('Tools')">Tools</p>
+                            <p class="tab-links " onclick="openLinks('cv')">Download CV</p>
                         </div>
+                        <div class="tab-contents active-tab" id="Education">
+                            <div class="education-item">
+                                <h4>2020 - 2024</h4>
+                                <p>Trilogi University | Management | GPA 3.63</p>
+                            </div>
 
-                        <div class="education-item">
-                            <h4>2022 – 2024</h4>
-                            <p>Awardee Bank Indonesia Scholarship | Generasi Baru Indonesia (GenBI)</p>
-                        </div>
-                    </div>
-                    
-                    <div class="tab-contents" id="Skills">
-                        <p class="skills-hint">Click For More Details</p>
-                        <ul class="skills-container">
-                            <li class="skill-item" data-skill="analytics">
-                                <div class="skill-header">
-                                    <img src="image/icon/analytical.svg" class="skill-icon" alt="Analytics">
-                                    <span>Analytical & Research</span>
-                                </div>
-                                <div class="skill-popup"></div>
-                            </li>
-                            <li class="skill-item" data-skill="leadership">
-                                <div class="skill-header">
-                                    <img src="image/icon/leadership.svg" class="skill-icon" alt="leadership">
-                                    <span>Leadership & Team Work</span>
-                                </div>
-                                <div class="skill-popup"></div>
-                            </li>
-                            <li class="skill-item" data-skill="communication">
-                                <div class="skill-header">
-                                    <img src="image/icon/commun.svg" class="skill-icon" alt="Communication">
-                                    <span>Communication</span>
-                                </div>
-                                <div class="skill-popup"></div>
-                            </li>
-                            <li class="skill-item" data-skill="time">
-                                <div class="skill-header">
-                                    <img src="image/icon/time management.svg" class="skill-icon" alt="Time Management & Adaptability">
-                                    <span>Time Management & Adaptability</span>
-                                </div>
-                                <div class="skill-popup"></div>
-                            </li>
-                            <li class="skill-item" data-skill="admin">
-                                <div class="skill-header">
-                                    <img src="image/icon/administration.svg" class="skill-icon" alt="Administratif Management">
-                                    <span>Administratif Management</span>
-                                </div>
-                                <div class="skill-popup"></div>
-                            </li>
-                            <li class="skill-item" data-skill="sales">
-                                <div class="skill-header">
-                                    <img src="image/icon/sales support.svg" class="skill-icon" alt="Sales & Marketing Support">
-                                    <span>Sales & Marketing Support</span>
-                                </div>
-                                <div class="skill-popup"></div>
-                            </li>
-                            <li class="skill-item" data-skill="digital">
-                                <div class="skill-header">
-                                    <img src="image/icon/digital-campaign.svg" class="skill-icon" alt="Digital Marketing Fundamental">
-                                    <span>Digital Marketing Fundamental</span>
-                                </div>
-                                <div class="skill-popup"></div>
-                            </li>
-                        </ul>
-                    
-                        <!-- ================= MODAL ================= -->
-                        <div class="skill-modal" id="skillModal">
-                            <div class="modal-content">
-                                <h3 id="modalTitle"></h3>
-                                <p id="modalDesc"></p>
+                            <div class="education-item">
+                                <h4>2022 – 2024</h4>
+                                <p>Awardee Bank Indonesia Scholarship | Generasi Baru Indonesia (GenBI)</p>
                             </div>
                         </div>
-                    </div>               
-                    
-                    <div class="tab-contents" id="Tools">
-                        <div class="tools-section">
-                            <h3 class="tools-title">Tools I Use</h3>
-                    
-                            <ul class="tools-container">
-                                <li>
-                                    <img src="image/icon/ms-word.svg" alt="Microsoft Word">
-                                    <span>Microsoft Word</span>
+                        
+                        <div class="tab-contents" id="Skills">
+                            <h3 class="skills-hint">Click For More Details</h3>
+                            <ul class="skills-container">
+                                <li class="skill-item" data-skill="analytics">
+                                    <div class="skill-header">
+                                        <img src="image/icon/analytical.svg" class="skill-icon" alt="Analytics">
+                                        <span>Analytical & Research</span>
+                                    </div>
+                                    <div class="skill-popup"></div>
                                 </li>
-                                <li>
-                                    <img src="image/icon/ms-excel.svg" alt="Microsoft Excel">
-                                    <span>Microsoft Excel</span>
+                                <li class="skill-item" data-skill="leadership">
+                                    <div class="skill-header">
+                                        <img src="image/icon/leadership.svg" class="skill-icon" alt="leadership">
+                                        <span>Leadership & Team Work</span>
+                                    </div>
+                                    <div class="skill-popup"></div>
                                 </li>
-                                <li>
-                                    <img src="image/icon/ms-point.svg" alt="Microsoft PowerPoint">
-                                    <span>Microsoft PowerPoint</span>
+                                <li class="skill-item" data-skill="communication">
+                                    <div class="skill-header">
+                                        <img src="image/icon/commun.svg" class="skill-icon" alt="Communication">
+                                        <span>Communication</span>
+                                    </div>
+                                    <div class="skill-popup"></div>
                                 </li>
-                                <li>
-                                    <img src="image/icon/g-docs.svg" alt="Google Docs">
-                                    <span>Google Docs</span>
+                                <li class="skill-item" data-skill="time">
+                                    <div class="skill-header">
+                                        <img src="image/icon/time management.svg" class="skill-icon" alt="Time Management & Adaptability">
+                                        <span>Time Management & Adaptability</span>
+                                    </div>
+                                    <div class="skill-popup"></div>
                                 </li>
-                                <li>
-                                    <img src="image/icon/g-sheets.svg" alt="Google Sheets">
-                                    <span>Google Sheets</span>
+                                <li class="skill-item" data-skill="admin">
+                                    <div class="skill-header">
+                                        <img src="image/icon/administration.svg" class="skill-icon" alt="Administratif Management">
+                                        <span>Administratif Management</span>
+                                    </div>
+                                    <div class="skill-popup"></div>
                                 </li>
-                                <li>
-                                    <img src="image/icon/g-slides.svg" alt="Google Slides">
-                                    <span>Google Slides</span>
+                                <li class="skill-item" data-skill="sales">
+                                    <div class="skill-header">
+                                        <img src="image/icon/sales support.svg" class="skill-icon" alt="Sales & Marketing Support">
+                                        <span>Sales & Marketing Support</span>
+                                    </div>
+                                    <div class="skill-popup"></div>
                                 </li>
-                                <li>
-                                    <img src="image/icon/g-trend.webp" alt="Google Trends">
-                                    <span>Google Trends</span>
-                                </li>
-                                <li>
-                                    <img src="image/icon/SEMRUSH.svg" alt="SEMrush">
-                                    <span>SEMrush</span>
-                                </li>
-                                <li>
-                                    <img src="image/icon/canva.svg" alt="Canva">
-                                    <span>Canva</span>
-                                </li>
-                                <li>
-                                    <img src="image/icon/CAPCUT.svg" alt="CapCut">
-                                    <span>CapCut</span>
+                                <li class="skill-item" data-skill="digital">
+                                    <div class="skill-header">
+                                        <img src="image/icon/digital-campaign.svg" class="skill-icon" alt="Digital Marketing Fundamental">
+                                        <span>Digital Marketing Fundamental</span>
+                                    </div>
+                                    <div class="skill-popup"></div>
                                 </li>
                             </ul>
+                        
+                            <!-- ================= MODAL ================= -->
+                            <div class="skill-modal" id="skillModal">
+                                <div class="modal-content">
+                                    <h3 id="modalTitle"></h3>
+                                    <p id="modalDesc"></p>
+                                </div>
+                            </div>
+                        </div>               
+                        
+                        <div class="tab-contents" id="Tools">
+                            <div class="tools-section">
+                                <h3 class="tools-title">Tools I Use</h3>
+                        
+                                <ul class="tools-container">
+                                    <li>
+                                        <img src="image/icon/ms-word.svg" alt="Microsoft Word">
+                                        <span>Microsoft Word</span>
+                                    </li>
+                                    <li>
+                                        <img src="image/icon/ms-excel.svg" alt="Microsoft Excel">
+                                        <span>Microsoft Excel</span>
+                                    </li>
+                                    <li>
+                                        <img src="image/icon/ms-point.svg" alt="Microsoft PowerPoint">
+                                        <span>Microsoft PowerPoint</span>
+                                    </li>
+                                    <li>
+                                        <img src="image/icon/g-docs.svg" alt="Google Docs">
+                                        <span>Google Docs</span>
+                                    </li>
+                                    <li>
+                                        <img src="image/icon/g-sheets.svg" alt="Google Sheets">
+                                        <span>Google Sheets</span>
+                                    </li>
+                                    <li>
+                                        <img src="image/icon/g-slides.svg" alt="Google Slides">
+                                        <span>Google Slides</span>
+                                    </li>
+                                    <li>
+                                        <img src="image/icon/g-trend.webp" alt="Google Trends">
+                                        <span>Google Trends</span>
+                                    </li>
+                                    <li>
+                                        <img src="image/icon/SEMRUSH.svg" alt="SEMrush">
+                                        <span>SEMrush</span>
+                                    </li>
+                                    <li>
+                                        <img src="image/icon/canva.svg" alt="Canva">
+                                        <span>Canva</span>
+                                    </li>
+                                    <li>
+                                        <img src="image/icon/CAPCUT.svg" alt="CapCut">
+                                        <span>CapCut</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
+
+                        <div class="tab-contents" id="cv">
+                                <h3 class="cv-title">Interested in working together?</h3>
+                                <p class="cv-desc">
+                                    Download my CV to learn more about my experience, skills, and professional background.
+                                </p>
+                        
+                                <a href="CV/CV_Dwi Astika.pdf" download class="download-btn">
+                                    Download CV
+                                </a>
+                        </div>
+                        
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="tab-contents" id="cv">
-                            <h3 class="cv-title">Interested in working together?</h3>
-                            <p class="cv-desc">
-                                Download my CV to learn more about my experience, skills, and professional background.
-                            </p>
-                    
-                            <a href="image/CV/CV_Dwi Astika.pdf" download class="download-btn">
-                                Download CV
-                            </a>
+        <!-- ================= Organization Experience ================= -->
+        <section class="organization-wrapper">
+            <h2 class="org-title">Organization Experience</h2>
+        
+            <div class="organization-section">
+                <a href="genbi.html" class="org-card">
+                    <div class="org-icon">
+                        <img src="image/icon/genbi.png" alt="GenBI Jakarta">
                     </div>
-                    
-                </div>
+                    <h3>GenBI Jakarta</h3>
+                </a>
+        
+                <a href="himamen.html" class="org-card">
+                    <div class="org-icon">
+                        <img src="image/icon/himamen.png" alt="Himamen Trilogi">
+                    </div>
+                    <h3>HIMAMEN Trilogi</h3>
+                </a>
             </div>
-        </div>
-    </section>
-
-    <section class="organization-wrapper">
-        <h2 class="org-title">Organization Experience</h2>
-    
-        <div class="organization-section">
-            <a href="genbi.html" class="org-card">
-                <div class="org-icon">
-                    <img src="image/icon/genbi.png" alt="GenBI Jakarta">
-                </div>
-                <h3>GenBI Jakarta</h3>
-            </a>
-    
-            <a href="himamen.html" class="org-card">
-                <div class="org-icon">
-                    <img src="image/icon/himamen.png" alt="Himamen Trilogi">
-                </div>
-                <h3>HIMAMEN Trilogi</h3>
-            </a>
-        </div>
-    </section>
-    
-    <!-- ================= Work Experience ================= -->
-    <section class="work-section" id="experience">
-        <h2 class="section-title">Work Experience</h2>
-    
-        <div class="work-grid">
-    
-            <!-- EXPERIENCE 1 -->
-            <div class="work-card"
-                 data-title="Jakmall x Rakamin Academy"
-                 data-role="Campaign & Digital Performance Officer · September 2025"
-                 data-desc="Responsible for processing, analyzing, and visualizing website and business data."
-                 data-image="image/rakamin_logo.png"
-                 data-tasks="Developed the “Radiance Partner Program” digital campaign strategy focused on acquiring and retaining Jakmall’s dropship partners in the Health & Beauty category.;Planned and simulated cross-platform media execution across TikTok Ads, Meta Ads, and Google Search Ads, supported by a proposed Rp50M budget allocation and KPI benchmarks for each funnel stage.;Conducted audience and buyer persona analysis to identify key segments, pain points, and value drivers as the basis for targeted campaign messaging.;Mapped a full-funnel campaign timeline—from awareness to retention—ensuring alignment between weekly goals, content assets, and performance objectives."
-                 data-tools="Google Trends, Google Slides, Canva, Microsoft Excel"
-                 data-skills="Strategic Planning, Funnel Mapping Creative Campaign Ideation, Audience Analysis"
-                 data-gallery="">
-                <h3>Jakmall x Rakamin Academy</h3>
-                <p class="work-role">
-                    Campaign & Digital Performance Officer
-                </p>
-            
-                <p class="work-date">
-                    September 2025
-                </p>
-            </div>
-    
-            <!-- EXPERIENCE 2 -->
-            <div class="work-card"
-                 data-title="Noona Closet"
-                 data-role="Crew Booth Freelance · August 2024 - July 2025"
-                 data-desc="Focused on customer database enrichment and reporting."
-                 data-image="image/noona_logo.png"
-                 data-tasks="Achieved top sales performance with a 300% increase in sales through proactive engagement and responsive customer service.;Responsible for handling sales transactions and ensuring accurate daily reporting.;Managed booth display arrangement and inventory to ensure consistent product availability.;Represented the brand professionally to build brand awareness."
-                 data-tools=""
-                 data-skills="Sales Performance Optimization, Customer Engagement & Persuasive Communication, Sales Data Handling & Reporting Accuracy"
-                 data-gallery="image/noona_hero.png"
-                 data-image-mode="logo-large">
-                <h3>Noona Closet</h3>
-                <p class="work-role">
-                    Crew Booth Freelance
-                </p>
-            
-                <p class="work-date">
-                    August 2024 - July 2025
-                </p>
-            </div>
-    
-            <!-- EXPERIENCE 3 -->
-            <div class="work-card"
-                 data-title="PT Bina Pertiwi"
-                 data-role="Sales Management Internship · August - December 2023"
-                 data-desc="Completed hands-on data analytics case studies."
-                 data-image="image/bina_pertiwi_logo.png"
-                 data-tasks="Optimized the customer database by adding 1,070 palm oil companies in Indonesia, resulting in a 91% increase in potential customer conversion.;Compiled a comprehensive report on the development of the palm oil industry, serving as the basis for strategic business expansion recommendations.;Conducted data analysis and visualization related to the coverage area of the palm oil industry to identify sales opportunities and optimize marketing territory."
-                 data-tools="Microsoft Word, Microsoft Excel, Canva, Tableau"
-                 data-skills="Strategic Sales Planning, Market Research, Communication Skill"
-                 data-gallery="image/bina_pertiwi_hero.png">
-                <h3>PT Bina Pertiwi</h3>
-                <p class="work-role">
-                    Sales Management Internship
-                </p>
-            
-                <p class="work-date">
-                    August - December 2023
-                </p>
-            </div>
-    
-        </div>
-    </section>
-
-    <div class="modal-overlay" id="experienceModal">
-        <div class="modal-box">
-    
-            <div class="modal-close" id="closeModal">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-    
-            <!-- IMAGE -->
-            <div class="modal-image" id="modalImageWrap">
-                <img id="modalImage" src="" alt="">
-            </div>
-    
-            <h3 id="modalTitle"></h3>
-            <span id="modalRole"></span>
-    
-            <p id="modalDesc"></p>
-    
-            <h4>Key Responsibilities</h4>
-            <ul id="modalTasks"></ul>
-    
-            <h4 id="toolsTitle">Tools</h4>
-            <div class="tool-tags" id="modalTools"></div>
-
-            <h4 id="skillsTitle">Skills</h4>
-            <div class="tool-tags" id="modalSkills"></div>
-
-            <h4 id="PhotoTitle">Work Highlights</h4>
-            <div class="modal-gallery" id="modalGalleryWrap">
-                <img id="modalGalleryImage" src="" alt="">
-            </div>
-
-    
-        </div>
-    </div>
-
-    <!-- ================= Project ================= -->
-    <section id="projects" class="projects-section">
-        <h2 class="section-title">Selected Projects</h2>
-        <p class="section-subtitle">
-            A selection of projects that showcase my experience in digital marketing, data analysis, and business support.
-        </p>
-    
-        <div class="projects-grid">
-    
-            <!-- PROJECT 1 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Marketing Plan for Partner Acquisition & Retention at Jakmall</h3>
-                    <span>September 2025</span>
-                    <p>
+        </section>
+        
+        <!-- ================= Work Experience ================= -->
+        <section class="work-section" id="experience">
+            <h2 class="section-title">Work Experience</h2>
+        
+            <div class="work-grid">
+        
+                <!-- EXPERIENCE 1 -->
+                <div class="work-card"
+                    data-title="Jakmall x Rakamin Academy"
+                    data-role="Campaign & Digital Performance Officer · September 2025"
+                    data-desc="Responsible for processing, analyzing, and visualizing website and business data."
+                    data-image="image/rakamin_logo.png"
+                    data-tasks="Developed the “Radiance Partner Program” digital campaign strategy focused on acquiring and retaining Jakmall’s dropship partners in the Health & Beauty category.;Planned and simulated cross-platform media execution across TikTok Ads, Meta Ads, and Google Search Ads, supported by a proposed Rp50M budget allocation and KPI benchmarks for each funnel stage.;Conducted audience and buyer persona analysis to identify key segments, pain points, and value drivers as the basis for targeted campaign messaging.;Mapped a full-funnel campaign timeline—from awareness to retention—ensuring alignment between weekly goals, content assets, and performance objectives."
+                    data-tools="Google Trends, Google Slides, Canva, Microsoft Excel"
+                    data-skills="Strategic Planning, Funnel Mapping Creative Campaign Ideation, Audience Analysis"
+                    data-gallery="">
+                    <h3>Jakmall x Rakamin Academy</h3>
+                    <p class="work-role">
+                        Campaign & Digital Performance Officer
                     </p>
-                    <a href="project_rakamin_jakmall.html" class="project-link">
-                        View Case Study →
-                    </a>
-                </div>
-            </div>
-            
-    
-            <!-- PROJECT 2 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>BNSP Certification Training : <br> Study Case Noona Closet</h3>
-                    <span>December 2024</span>
-                    <p>
+                
+                    <p class="work-date">
+                        September 2025
                     </p>
-                    <a href="noona_closet.html" class="project-link">
-                        View Case Study →
-                    </a>
                 </div>
-            </div>
-            
-    
-            <!-- PROJECT 3 -->
-            <div class="project-card">
-                <div class="project-content">
-                    <h3>Business Plan Competition : <br> Yup's Gurt</h3>
-                    <span>August 2020</span>
-                    <p>
+        
+                <!-- EXPERIENCE 2 -->
+                <div class="work-card"
+                    data-title="Noona Closet"
+                    data-role="Crew Booth Freelance · August 2024 - July 2025"
+                    data-desc="Focused on customer database enrichment and reporting."
+                    data-image="image/noona_logo.png"
+                    data-tasks="Achieved top sales performance with a 300% increase in sales through proactive engagement and responsive customer service.;Responsible for handling sales transactions and ensuring accurate daily reporting.;Managed booth display arrangement and inventory to ensure consistent product availability.;Represented the brand professionally to build brand awareness."
+                    data-tools=""
+                    data-skills="Sales Performance Optimization, Customer Engagement & Persuasive Communication, Sales Data Handling & Reporting Accuracy"
+                    data-gallery="image/noona_hero.png"
+                    data-image-mode="logo-large">
+                    <h3>Noona Closet</h3>
+                    <p class="work-role">
+                        Crew Booth Freelance
                     </p>
-                    <a href="yups_gurt.html" class="project-link">
-                        View Case Study →
-                    </a>
+                
+                    <p class="work-date">
+                        August 2024 - July 2025
+                    </p>
                 </div>
+        
+                <!-- EXPERIENCE 3 -->
+                <div class="work-card"
+                    data-title="PT Bina Pertiwi"
+                    data-role="Sales Management Internship · August - December 2023"
+                    data-desc="Completed hands-on data analytics case studies."
+                    data-image="image/bina_pertiwi_logo.png"
+                    data-tasks="Optimized the customer database by adding 1,070 palm oil companies in Indonesia, resulting in a 91% increase in potential customer conversion.;Compiled a comprehensive report on the development of the palm oil industry, serving as the basis for strategic business expansion recommendations.;Conducted data analysis and visualization related to the coverage area of the palm oil industry to identify sales opportunities and optimize marketing territory."
+                    data-tools="Microsoft Word, Microsoft Excel, Canva, Tableau"
+                    data-skills="Strategic Sales Planning, Market Research, Communication Skill"
+                    data-gallery="image/bina_pertiwi_hero.png">
+                    <h3>PT Bina Pertiwi</h3>
+                    <p class="work-role">
+                        Sales Management Internship
+                    </p>
+                
+                    <p class="work-date">
+                        August - December 2023
+                    </p>
+                </div>
+        
             </div>
-    
+        </section>
+
+        <div class="modal-overlay" id="experienceModal">
+            <div class="modal-box">
+        
+                <div class="modal-close" id="closeModal">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+        
+                <!-- IMAGE -->
+                <div class="modal-image" id="modalImageWrap">
+                    <img id="modalImage" src="" alt="">
+                </div>
+        
+                <h3 id="modalTitle"></h3>
+                <span id="modalRole"></span>
+        
+                <p id="modalDesc"></p>
+        
+                <h4>Key Responsibilities</h4>
+                <ul id="modalTasks"></ul>
+        
+                <h4 id="toolsTitle">Tools</h4>
+                <div class="tool-tags" id="modalTools"></div>
+
+                <h4 id="skillsTitle">Skills</h4>
+                <div class="tool-tags" id="modalSkills"></div>
+
+                <h4 id="PhotoTitle">Work Highlights</h4>
+                <div class="modal-gallery" id="modalGalleryWrap">
+                    <img id="modalGalleryImage" src="" alt="">
+                </div>
+
+        
+            </div>
         </div>
-    </section>
-    
-    
-    <!-- ================= Certificate ================= -->
-    <section id="certificates">
-        <div class="cert-container">
-            <h2 class="cert-title">Certificates & Achievements</h2>
-            <p class="cert-subtitle">
-                Selected certifications that represent my professional journey.
+
+        <!-- ================= Project ================= -->
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Selected Projects</h2>
+            <p class="section-subtitle">
+                A selection of projects that showcase my experience in digital marketing, data analysis, and business support.
             </p>
-    
-            <!-- AUTO GENERATED GALLERY -->
-            <div class="cert-gallery" id="certGallery"></div>
-        </div>
-    </section>
-    
-    <!-- ================= CERTIFICATE MODAL ================= -->
-    <div class="cert-modal" id="certModal">
-        <span class="cert-close">&times;</span>
-        <img id="certModalImg" alt="Certificate Preview">
-    </div>
-    
-    <section id="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-text">
-                    Dwi Astika
-                </p>
-                </a>
-                <a href="https://www.linkedin.com/in/dwiastika" target="_blank" aria-label="LinkedIn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="mailto:dwi9astika@gmail.com" aria-label="Email">
-                    <i class="fa-regular fa-envelope"></i>
-                </a>
-    
-                <p class="footer-copy">
-                    &copy; 2025 All rights reserved.
-                </p>
+        
+            <div class="projects-grid">
+        
+                <!-- PROJECT 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Marketing Plan for Partner Acquisition & Retention at Jakmall</h3>
+                        <span>September 2025</span>
+                        <p>
+                        </p>
+                        <a href="project_rakamin_jakmall.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+                
+        
+                <!-- PROJECT 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>BNSP Certification Training : <br> Study Case Noona Closet</h3>
+                        <span>December 2024</span>
+                        <p>
+                        </p>
+                        <a href="noona_closet.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+                
+        
+                <!-- PROJECT 3 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Business Plan Competition : <br> Yup's Gurt</h3>
+                        <span>August 2020</span>
+                        <p>
+                        </p>
+                        <a href="yups_gurt.html" class="project-link">
+                            View Case Study →
+                        </a>
+                    </div>
+                </div>
+        
             </div>
+        </section>
+        
+        <!-- ================= Certificate ================= -->
+        <section id="certificates">
+            <div class="cert-container">
+                <h2 class="cert-title">Certificates & Achievements</h2>
+                <p class="cert-subtitle">
+                    Selected certifications that represent my professional journey.
+                </p>
+        
+                <!-- AUTO GENERATED GALLERY -->
+                <div class="cert-gallery" id="certGallery"></div>
+            </div>
+        </section>
+        
+        <!-- ================= CERTIFICATE MODAL ================= -->
+        <div class="cert-modal" id="certModal">
+            <span class="cert-close">&times;</span>
+            <img id="certModalImg" alt="Certificate Preview">
         </div>
-    </section>
+        
+        <!-- ================= Footer ================= -->
+        <div id="footer-global"></div>
 
-    <!-- ================= Whatsapp Floating ================= -->
-    <div id="whatsapp-global"></div>
+        <!-- ================= Whatsapp Floating ================= -->
+        <div id="whatsapp-global"></div>
+    </main>
 
     <script>
         function scrollToAbout() {

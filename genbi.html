@@ -8,147 +8,132 @@
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/organisasi.css">
     <link rel="stylesheet" href="./components/style-components.css">
     <script src="js/loader.js"></script>
 
 </head>
 
 <body>
+<header>
+    <div id="navbar"></div>
+</header>
 
-<div id="navbar"></div>
-    
+<main>
+    <!-- ================= Hero ================= -->
+    <section class="org-hero">
+        <div class="org-logo-wrap">
+            <img src="image/icon/genbi.png" alt="GenBI Jakarta">
+        </div>
 
-<section class="org-hero">
-    <div class="org-logo-wrap">
-        <img src="image/icon/genbi.png" alt="GenBI Jakarta">
-    </div>
+        <div class="org-text">
+            <h1>GenBI Jakarta</h1>
+            <p class="org-intro">GenBI (Generasi Baru Indonesia) Jakarta is a community of Bank Indonesia scholarship recipients in the Jakarta region that operates under the direct supervision of Bank Indonesia. The community aims to develop young individuals as Bank Indonesia frontliners, agents of change, and future leaders across various fields.</p>
+        </div>
+    </section>
 
-    <div class="org-text">
-        <h1>GenBI Jakarta</h1>
-        <p class="org-intro">GenBI (Generasi Baru Indonesia) Jakarta is a community of Bank Indonesia scholarship recipients in the Jakarta region that operates under the direct supervision of Bank Indonesia. The community aims to develop young individuals as Bank Indonesia frontliners, agents of change, and future leaders across various fields.</p>
-    </div>
-</section>
+    <!-- ================= Core Responsibility ================= -->
+    <section class="org-core"> 
+        <div class="core-text">
+            <span class="section-label">ROLE OVERVIEW</span>
+            <h2>Core Responsibilities</h2>
+        
+            <p class="org-position">
+                Secretary Trilogi University Commissariat<br>
+                <span>2022 — 2024</span>
+            </p>
+        
+            <ul class="core-list">
+                <li>
+                    Managed administrative tasks by organizing and archiving 30+ official documents,
+                    including proposals, accountability reports, invitation letters, and permits.
+                </li>
+                <li>
+                    Coordinated meetings, from agenda setting to minute-taking, ensuring timely and
+                    efficient program execution.
+                </li>
+                <li>
+                    Reported both regular and annual activities to GenBI Jakarta and Bank Indonesia
+                    Regional Office to maintain transparency and accountability.
+                </li>
+            </ul>
+        </div>
+        
 
-<section class="org-core"> 
-    <div class="core-text">
-        <span class="section-label">ROLE OVERVIEW</span>
-        <h2>Core Responsibilities</h2>
-    
-        <p class="org-position">
-            Secretary Trilogi University Commissariat<br>
-            <span>2022 — 2024</span>
+        <div class="core-image-hima"> 
+            <img src="image/genbi-hero.webp" alt="GenBI Jakarta Activity">
+        </div>
+    </section>
+
+    <!-- ================= Events ================= -->
+    <section class="org-events">
+        <h2>Organizational Events</h2>
+        <p class="events-subtitle">
+            Additional Organizational Contributions as Secretary
         </p>
-    
-        <ul class="core-list">
-            <li>
-                Managed administrative tasks by organizing and archiving 30+ official documents,
-                including proposals, accountability reports, invitation letters, and permits.
-            </li>
-            <li>
-                Coordinated meetings, from agenda setting to minute-taking, ensuring timely and
-                efficient program execution.
-            </li>
-            <li>
-                Reported both regular and annual activities to GenBI Jakarta and Bank Indonesia
-                Regional Office to maintain transparency and accountability.
-            </li>
-        </ul>
-    </div>
-    
 
-    <div class="core-image-hima"> 
-        <img src="image/genbi-hero.webp" alt="GenBI Jakarta Activity">
-    </div>
-</section>
+        <div class="timeline">
 
-<section class="org-events">
-    <h2>Organizational Events</h2>
-    <p class="events-subtitle">
-        Additional Organizational Contributions as Secretary
-    </p>
+            <div class="timeline-item" onclick="openEvent(this)"
+                data-title="GenBI STJ (Serah Terima Jabatan)"
+                data-role="26 Oct 2024"
+                data-tasks="Scheduled meetings and distributed meeting minutes to support effective coordination.;Served as the primary liaison between the committee and external partners to ensure all administrative requirements and partnership documents were managed professionally.;Organized and maintained administrative documents, including formal invitations, attendance records for 179 participants, and the post-event report for evaluation and official documentation purposes.">
 
-    <div class="timeline">
-
-        <div class="timeline-item" onclick="openEvent(this)"
-            data-title="GenBI STJ (Serah Terima Jabatan)"
-            data-role="26 Oct 2024"
-            data-tasks="Scheduled meetings and distributed meeting minutes to support effective coordination.;Served as the primary liaison between the committee and external partners to ensure all administrative requirements and partnership documents were managed professionally.;Organized and maintained administrative documents, including formal invitations, attendance records for 179 participants, and the post-event report for evaluation and official documentation purposes.">
-
-            <div class="timeline-body">
-                <span class="timeline-date">Oct 2024</span>
-                <h3>Secretary of GenBI STJ</h3>
-                <p>An annual evaluation and reflection on organizational achievements, combined with an award session and a discussion forum to enhance future programs</p>
-                <span class="timeline-link">View details</span>
+                <div class="timeline-body">
+                    <span class="timeline-date">Oct 2024</span>
+                    <h3>Secretary of GenBI STJ</h3>
+                    <p>An annual evaluation and reflection on organizational achievements, combined with an award session and a discussion forum to enhance future programs</p>
+                    <span class="timeline-link">View details</span>
+                </div>
             </div>
-        </div>
 
-        <div class="timeline-item" onclick="openEvent(this)"
-            data-title="Gen-Qris"
-            data-role="March - June 2024"
-            data-tasks="Managed event proposals and post-event reports for activities conducted from March to June 2024 for evaluation and official documentation purposes.;Handled official permit letters with UMKM partners to support event implementation.;Handled administrative requests for facility and equipment borrowing, including rooms and event-related assets.">
+            <div class="timeline-item" onclick="openEvent(this)"
+                data-title="Gen-Qris"
+                data-role="March - June 2024"
+                data-tasks="Managed event proposals and post-event reports for activities conducted from March to June 2024 for evaluation and official documentation purposes.;Handled official permit letters with UMKM partners to support event implementation.;Handled administrative requests for facility and equipment borrowing, including rooms and event-related assets.">
 
-            <div class="timeline-body">
-                <span class="timeline-date">March - Jun 2024</span>
-                <h3>Secretary of GEN-Qris</h3>
-                <p>A program that promoted UMKM while increasing public awareness of QRIS as a digital payment method.</p>
-                <span class="timeline-link">View details</span>
+                <div class="timeline-body">
+                    <span class="timeline-date">March - Jun 2024</span>
+                    <h3>Secretary of GEN-Qris</h3>
+                    <p>A program that promoted UMKM while increasing public awareness of QRIS as a digital payment method.</p>
+                    <span class="timeline-link">View details</span>
+                </div>
             </div>
-        </div>
-        <div class="timeline-item" onclick="openEvent(this)"
-            data-title="GenBI Healthy Party"
-            data-role="20 July 2024"
-            data-tasks="Scheduled meetings and promptly distributed meeting minutes to support effective coordination.;Managed event permits, MOU, and organized participant attendance records.;Compiled a comprehensive post-event report as official documentation, serving as a reference for evaluation and accountability to KPW Bank Indonesia Jakarta and PMI Jakarta.">
+            <div class="timeline-item" onclick="openEvent(this)"
+                data-title="GenBI Healthy Party"
+                data-role="20 July 2024"
+                data-tasks="Scheduled meetings and promptly distributed meeting minutes to support effective coordination.;Managed event permits, MOU, and organized participant attendance records.;Compiled a comprehensive post-event report as official documentation, serving as a reference for evaluation and accountability to KPW Bank Indonesia Jakarta and PMI Jakarta.">
 
-            <div class="timeline-body">
-                <span class="timeline-date">Jul 2024</span>
-                <h3>Secretary of GenBI Healthy Party</h3>
-                <p>A blood donation activity that demonstrated GenBI’s commitment to promoting public health awareness.</p>
-                <span class="timeline-link">View details</span>
+                <div class="timeline-body">
+                    <span class="timeline-date">Jul 2024</span>
+                    <h3>Secretary of GenBI Healthy Party</h3>
+                    <p>A blood donation activity that demonstrated GenBI’s commitment to promoting public health awareness.</p>
+                    <span class="timeline-link">View details</span>
+                </div>
             </div>
+
         </div>
+    </section>
 
-    </div>
-</section>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="eventModal">
-    <div class="modal-box">
-        <div class="modal-close" onclick="closeModal()">
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-        <h3 id="modalTitle"></h3>
-        <span id="modalRole"></span>
-        <ul id="modalTasks"></ul>
-    </div>
-</div>
-
-<section id="footer">
-    <div class="container1">
-        <div class="footer-content">
-            <p class="footer-text">
-                Dwi Astika
-            </p>
-
-            <a href="https://www.linkedin.com/in/dwiastika"
-               target="_blank"
-               aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-
-            <a href="mailto:dwi9astika@gmail.com"
-               aria-label="Email">
-                <i class="fa-regular fa-envelope"></i>
-            </a>
-
-            <p class="footer-copy">
-                &copy; 2025 All rights reserved.
-            </p>
+    <!-- ================= Modal ================= -->
+    <div class="modal-overlay" id="eventModal">
+        <div class="modal-box">
+            <div class="modal-close" onclick="closeModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <h3 id="modalTitle"></h3>
+            <span id="modalRole"></span>
+            <ul id="modalTasks"></ul>
         </div>
     </div>
-</section>
 
-<div id="whatsapp-global"></div>
+    <!-- ================= Footer ================= -->
+    <div id="footer-global"></div>
+
+    <!-- ================= Whatsapp ================= -->
+    <div id="whatsapp-global"></div>
+</main>
 
 <script>
     const modal = document.getElementById('eventModal');

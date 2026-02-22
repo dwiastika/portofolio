@@ -1,12 +1,10 @@
-/* ================= NAVBAR ================= */
-
 /* ROOT VARIABLE (biar konsisten) */
 :root{
     --primary: hsl(210,39%,35%);
     --primary-soft: rgba(32,70,105,0.85);
 }
 
-/* HEADER */
+/* ================= NAVBAR ================= */
 header{
     position: fixed;
     top: 0;
@@ -16,7 +14,6 @@ header{
     box-shadow: 0 1px 5px rgba(0,0,0,0.05);
     z-index: 1000;
     transition: all .35s ease;
-    will-change: backdrop-filter;
 }
 
 /* SCROLLED STATE */
@@ -201,6 +198,78 @@ nav{
         right: 16px;
         bottom: 67px;
     }
+
+    .footer-text {
+        font-size: 14px;
+    }
 }
 
 /* End Whatsapp */
+
+/* Footer */
+/* ================= FOOTER ================= */
+#footer {
+    width: 100%;
+    padding: 18px 0; /* lebih pendek */
+    background-color: hsl(210, 39%, 35%);
+    color: #fff;
+}
+
+.footer-content {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 22px;
+    flex-wrap: wrap; /* aman di mobile */
+}
+
+.container-footer {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-text {
+    font-size: 17px;
+    color: #fff;
+    margin: 0;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+/* ICON */
+.footer-content a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.footer-content a:hover {
+    background: #fff;
+    color: #111;
+    transform: translateY(-3px);
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #fff;
+    opacity: 0.85;
+}
+
+@media (max-width: 480px) {
+    #footer {
+        padding: 20px 6px;
+    }
+    .footer-text {
+        font-size: 14px;
+    }
+    .footer-copy {
+        font-size: 12px;
+    }
+}
