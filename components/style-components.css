@@ -1,0 +1,206 @@
+/* ================= NAVBAR ================= */
+
+/* ROOT VARIABLE (biar konsisten) */
+:root{
+    --primary: hsl(210,39%,35%);
+    --primary-soft: rgba(32,70,105,0.85);
+}
+
+/* HEADER */
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--primary);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+    z-index: 1000;
+    transition: all .35s ease;
+    will-change: backdrop-filter;
+}
+
+/* SCROLLED STATE */
+header.scrolled{
+    background-color: var(--primary-soft);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* NAV CONTAINER */
+nav{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 28px 30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center; /* menu di tengah */
+    position:relative;
+}
+
+/* BRAND LEFT */
+.brand{
+    position:absolute;
+    left:2rem;
+
+    font-size:1.8rem;
+    font-weight:600;
+    color:#fff;
+    text-decoration:none;
+    letter-spacing:.5px;
+    transition:color .3s ease;
+}
+
+.brand:hover{
+    color:#3498db;
+}
+
+/* MENU CENTER */
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:3rem;
+    padding:0;
+    margin:0;
+}
+
+.nav-links li a{
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    text-decoration:none;
+    color:#fff;
+    font-size:16px;
+    font-weight:500;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+/* ACTIVE STATE (NEW) */
+.nav-links li a.active{
+    color:#3498db;
+    font-weight:600;
+}
+
+/* HOVER */
+.nav-links li a:hover{
+    color:#3498db;
+    transform:translateY(-1px);
+}
+
+/* ICON HIDDEN DESKTOP */
+.nav-links a i{
+    display:none;
+}
+
+/* ================= MOBILE NAVBAR ================= */
+
+@media (max-width:768px){
+
+    header{
+        top:auto;
+        bottom:0;
+        box-shadow:0 -4px 15px rgba(0,0,0,0.15);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    nav{
+        padding:12px 0;
+        justify-content:center;
+    }
+
+    /* hide brand mobile */
+    .brand{
+        display:none;
+    }
+
+    .nav-links{
+        width:100%;
+        justify-content:space-around;
+        gap:0;
+    }
+
+    .nav-links li a{
+        flex-direction:column;
+        font-size:11px;
+        gap:4px;
+        transform:none;
+    }
+
+    .nav-links a i{
+        display:block;
+        font-size:18px;
+    }
+
+    .nav-links li a:hover{
+        transform:none;
+    }
+
+    /* supaya konten tidak ketutup navbar bawah */
+    body{
+        padding-bottom:70px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width:480px){
+    .nav-links li a{
+        font-size:10px;
+    }
+}
+
+/* Whatsapp Floating */
+.whatsapp-float {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    width: 56px;
+    height: 56px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    z-index: 3000;
+    transition: all 0.3s ease;
+}
+
+.modal-open .whatsapp-float {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.35);
+}
+
+@keyframes wa-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,.6); }
+    70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+.whatsapp-float {
+    animation: wa-pulse 2.5s infinite;
+}
+
+@media (max-width: 480px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        right: 16px;
+        bottom: 67px;
+    }
+}
+
+/* End Whatsapp */

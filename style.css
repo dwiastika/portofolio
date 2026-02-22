@@ -2,136 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
-a{
-    text-decoration: none;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
 }
-
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: hsl(210, 39%, 35%);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
-    z-index: 1000;
-    transition: all 0.4s ease;
-}
-
-header.scrolled {
-    background-color: rgba(32, 70, 105, 0.85);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-nav {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 30px 30px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.brand {
-    position: absolute;
-    left: 2rem;
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: color 0.4s ease;
-}
-
-.brand:hover {
-    color: #2980b9;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 3rem;
-    margin: 0 auto;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-    color: #3498db;
-    transform: translateY(-1px);
-}
-
-.nav-links a i {
-    display: none;
-}
-
-@media (max-width: 768px) {
-
-    header {
-        top: auto;
-        bottom: 0;
-        box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
-    }
-
-    nav {
-        padding: 12px 0;
-        justify-content: center;
-    }
-
-    /* Brand disembunyikan di mobile */
-    .brand {
-        display: none;
-    }
-
-    .nav-links {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        gap: 0;
-        margin: 0;
-    }
-
-    .nav-links li a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 11px;
-        gap: 4px;
-        color: #fff;
-    }
-
-    .nav-links a i {
-        display: block;
-        font-size: 18px;
-    }
-
-    .nav-links li a:hover {
-        color: #3498db;
-        transform: none;
-    }
-
-    /* Supaya konten tidak ketutup navbar bawah */
-    body {
-        padding-bottom: 70px;
-    }
-}
-
 
 #hero {
     height: 100vh;
@@ -434,10 +315,6 @@ nav {
 }
 
 /* ================= ICON PNG ================= */
-
-svg {
-    fill: hsl(210, 39%, 35%);
-}
 
 .skill-icon {
     width: 26px;
@@ -753,10 +630,6 @@ svg {
     aspect-ratio: 4 / 3;
 }
 
-.cert-card.wide {
-    grid-column: span 1;
-}
-
 .cert-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 22px 50px rgba(0,0,0,0.25);
@@ -894,51 +767,6 @@ svg {
     font-size: 13px;
     opacity: 0.85;
 }
-
-/* ================= FLOATING WHATSAPP ================= */
-.whatsapp-float {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    width: 56px;
-    height: 56px;
-    background-color: #25D366;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-    z-index: 3000;
-    transition: all 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: translateY(-6px) scale(1.05);
-    box-shadow: 0 18px 36px rgba(0,0,0,0.35);
-}
-
-@keyframes wa-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37,211,102,.6); }
-    70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
-    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-}
-
-.whatsapp-float {
-    animation: wa-pulse 2.5s infinite;
-}
-
-@media (max-width: 480px) {
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-        right: 16px;
-        bottom: 16px;
-    }
-}
-
 
 /* ================= WORK EXPERIENCE ================= */
 .work-section {
@@ -1114,13 +942,21 @@ svg {
     overflow: hidden;
     margin-bottom: 24px;
     background: #e5e7eb;
+    max-height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-image img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    display: block;
+    max-height: 90px;
+}
+
+.modal-image img[src*="noona"]{
+    transform: scale(1.8);
 }
 
 /* ===== IMAGE CONTAINER ===== */
@@ -1160,7 +996,7 @@ svg {
 
 .modal-gallery {
     width: 100%;
-    height: 220px;
+    aspect-ratio: 16 / 9;
     border-radius: 10px;
     overflow: hidden;
     margin-top: 14px;
@@ -1190,12 +1026,6 @@ svg {
 .projects-section {
     padding: 90px 6%;
     background: #fff;
-}
-
-.section-title {
-    font-size: 34px;
-    margin-bottom: 10px;
-    color: #0f172a;
 }
 
 .section-subtitle {
@@ -1296,38 +1126,10 @@ svg {
     opacity: .85;
 }
 
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .footer-brand p {
-        max-width: 100%;
-    }
-}
-
 /* =====================================================
    RESPONSIVE TABLET (≤ 768px)
 ===================================================== */
 @media (max-width: 768px) {
-
-    /* ---------- NAVBAR ---------- */
-    nav {
-        padding: 22px 20px;
-    }
-
-    .brand {
-        font-size: 1.6rem;
-        left: 1.5rem;
-    }
-
-    .nav-links {
-        gap: 1.6rem;
-    }
-
     /* ---------- HERO ---------- */
     #hero h1 {
         font-size: 2.6rem;
@@ -1398,22 +1200,6 @@ svg {
    RESPONSIVE MOBILE (≤ 480px)
 ===================================================== */
 @media (max-width: 480px) {
-
-    /* ---------- NAVBAR ---------- */
-    nav {
-        padding: 18px 16px;
-    }
-
-    .brand {
-        font-size: 1.4rem;
-        left: 1rem;
-    }
-
-    .nav-links {
-        gap: 1.2rem;
-        font-size: 14px;
-    }
-
     /* ---------- HERO ---------- */
     #hero {
         padding: 0 18px;
@@ -1468,12 +1254,6 @@ svg {
     .skill-popup {
         width: 220px;
         font-size: 13px;
-    }
-
-    /* ---------- ORGANIZATION ---------- */
-    .organization-section {
-        padding: 50px 22px;
-        gap: 28px;
     }
 
     .org-icon {
@@ -1537,13 +1317,11 @@ svg {
     }
 
     /* ---------- FOOTER ---------- */
+    #footer{
+        margin-bottom: -15px !important;
+    }
     .footer-text {
         font-size: 14px;
-    }
-
-    .whatsapp-float {
-        bottom: 90px;
-        right: 16px;
     }
 
     section {
@@ -1561,7 +1339,7 @@ svg {
     }
     .modal-image.hero img{
         height:auto;
-        object-fit:contain;
+        object-fit: contain;
     }
 
     .row {

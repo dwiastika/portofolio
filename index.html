@@ -5,51 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="./components/style-components.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="js/loader.js"></script>
+    <script src="js/components.js"></script>
     <title>Dwi Astika Portofolio</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <a class="brand" href="#">Dwi Astika</a>
     
-            <ul class="nav-links">
-                <li>
-                    <a href="#hero">
-                        <i class="fa-solid fa-house"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#about">
-                        <i class="fa-solid fa-user"></i>
-                        <span>About</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#experience">
-                        <i class="fa-solid fa-briefcase"></i>
-                        <span>Experience</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#projects">
-                        <i class="fa-solid fa-folder-open"></i>
-                        <span>Projects</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#certificates">
-                        <i class="fa-solid fa-certificate"></i>
-                        <span>Certificate</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
+    <div id="navbar"></div>
 
     <section id="hero">
         <h1>Hi I'm Dwi Astika</h1>
@@ -292,7 +256,7 @@
                  data-desc="Completed hands-on data analytics case studies."
                  data-image="image/bina_pertiwi_logo.png"
                  data-tasks="Optimized the customer database by adding 1,070 palm oil companies in Indonesia, resulting in a 91% increase in potential customer conversion.;Compiled a comprehensive report on the development of the palm oil industry, serving as the basis for strategic business expansion recommendations.;Conducted data analysis and visualization related to the coverage area of the palm oil industry to identify sales opportunities and optimize marketing territory."
-                 data-tools="Microsoft Word, Microsoft Excel, Canva, Tableu"
+                 data-tools="Microsoft Word, Microsoft Excel, Canva, Tableau"
                  data-skills="Strategic Sales Planning, Market Research, Communication Skill"
                  data-gallery="image/bina_pertiwi_hero.png">
                 <h3>PT Bina Pertiwi</h3>
@@ -343,6 +307,7 @@
         </div>
     </div>
 
+    <!-- ================= Project ================= -->
     <section id="projects" class="projects-section">
         <h2 class="section-title">Selected Projects</h2>
         <p class="section-subtitle">
@@ -352,7 +317,7 @@
         <div class="projects-grid">
     
             <!-- PROJECT 1 -->
-            <div class="project-card project-style">
+            <div class="project-card">
                 <div class="project-content">
                     <h3>Marketing Plan for Partner Acquisition & Retention at Jakmall</h3>
                     <span>September 2025</span>
@@ -366,7 +331,7 @@
             
     
             <!-- PROJECT 2 -->
-            <div class="project-card project-style">
+            <div class="project-card">
                 <div class="project-content">
                     <h3>BNSP Certification Training : <br> Study Case Noona Closet</h3>
                     <span>December 2024</span>
@@ -380,7 +345,7 @@
             
     
             <!-- PROJECT 3 -->
-            <div class="project-card project-style">
+            <div class="project-card">
                 <div class="project-content">
                     <h3>Business Plan Competition : <br> Yup's Gurt</h3>
                     <span>August 2020</span>
@@ -416,7 +381,7 @@
     </div>
     
     <section id="footer">
-        <div class="container1">
+        <div class="container">
             <div class="footer-content">
                 <p class="footer-text">
                     Dwi Astika
@@ -436,11 +401,9 @@
         </div>
     </section>
 
-    <a href="https://wa.me/6283874780065" class="whatsapp-float" target="_blank" aria-label="Chat via WhatsApp">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <!-- ================= Whatsapp Floating ================= -->
+    <div id="whatsapp-global"></div>
 
-    
     <script>
         function scrollToAbout() {
             const section = document.querySelector('#about');
@@ -620,126 +583,134 @@
     </script>
 
     <script>
-    const cards = document.querySelectorAll('.work-card');
-    const modal = document.getElementById('experienceModal');
-    
-    const titleEl = document.getElementById('modalTitle');
-    const roleEl = document.getElementById('modalRole');
-    const descEl = document.getElementById('modalDesc');
-    const tasksEl = document.getElementById('modalTasks');
-    const toolsEl = document.getElementById('modalTools');
-    const skillsEl = document.getElementById('modalSkills');
-    const imageEl = document.getElementById('modalImage');
-    const toolsTitle = document.getElementById('toolsTitle');
-    const skillsTitle = document.getElementById('skillsTitle');
-    const imageWrap = document.getElementById('modalImageWrap');
-    const GalleryWrap = document.getElementById('modalGalleryWrap');
-    const galleryEl = document.getElementById('modalGalleryImage');
-    const galleryTitle = document.getElementById('PhotoTitle');
-    
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            titleEl.textContent = card.dataset.title;
-            roleEl.textContent = card.dataset.role;
-            descEl.textContent = card.dataset.desc;
-    
-            imageEl.src = card.dataset.image;
-            imageEl.alt = card.dataset.title;
-
-            imageWrap.classList.remove('logo', 'hero', 'logo-large');
-
-            // AUTO MODE DETECTION
-            if (card.dataset.imageMode === 'logo-large') {
-                imageWrap.classList.add('logo-large');
-            } else if (card.dataset.image.toLowerCase().includes('logo')) {
-                imageWrap.classList.add('logo');
-            } else {
-                imageWrap.classList.add('hero');
-            }
-    
-            tasksEl.innerHTML = '';
-            card.dataset.tasks.split(';').forEach(task => {
-                const li = document.createElement('li');
-                li.textContent = task.trim();
-                tasksEl.appendChild(li);
+        const cards = document.querySelectorAll('.work-card');
+        const modal = document.getElementById('experienceModal');
+        
+        const titleEl = document.getElementById('modalTitle');
+        const roleEl = document.getElementById('modalRole');
+        const descEl = document.getElementById('modalDesc');
+        const tasksEl = document.getElementById('modalTasks');
+        const toolsEl = document.getElementById('modalTools');
+        const skillsEl = document.getElementById('modalSkills');
+        const imageEl = document.getElementById('modalImage');
+        
+        const toolsTitle = document.getElementById('toolsTitle');
+        const skillsTitle = document.getElementById('skillsTitle');
+        
+        const imageWrap = document.getElementById('modalImageWrap');
+        
+        const galleryWrap = document.getElementById('modalGalleryWrap');
+        const galleryEl = document.getElementById('modalGalleryImage');
+        const galleryTitle = document.getElementById('PhotoTitle');
+        
+        const body = document.body;
+        
+        
+        // ================= OPEN MODAL =================
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+        
+                // ===== BASIC DATA =====
+                titleEl.textContent = card.dataset.title;
+                roleEl.textContent = card.dataset.role;
+                descEl.textContent = card.dataset.desc;
+        
+                imageEl.src = card.dataset.image;
+                imageEl.alt = card.dataset.title;
+        
+                imageWrap.classList.remove('logo', 'hero', 'logo-large');
+        
+                // AUTO IMAGE MODE
+                if (card.dataset.imageMode === 'logo-large') {
+                    imageWrap.classList.add('logo-large');
+                } 
+                else if (card.dataset.image.toLowerCase().includes('logo')) {
+                    imageWrap.classList.add('logo');
+                } 
+                else {
+                    imageWrap.classList.add('hero');
+                }
+        
+                // ===== TASKS =====
+                tasksEl.innerHTML = '';
+                card.dataset.tasks.split(';').forEach(task => {
+                    const li = document.createElement('li');
+                    li.textContent = task.trim();
+                    tasksEl.appendChild(li);
+                });
+        
+                // ===== TOOLS =====
+                toolsEl.innerHTML = '';
+                if (card.dataset.tools && card.dataset.tools.trim() !== '') {
+        
+                    toolsTitle.style.display = 'block';
+                    toolsEl.style.display = 'flex';
+        
+                    card.dataset.tools.split(',').forEach(tool => {
+                        const span = document.createElement('span');
+                        span.textContent = tool.trim();
+                        toolsEl.appendChild(span);
+                    });
+        
+                } else {
+                    toolsTitle.style.display = 'none';
+                    toolsEl.style.display = 'none';
+                }
+        
+                // ===== SKILLS =====
+                skillsEl.innerHTML = '';
+                if (card.dataset.skills && card.dataset.skills.trim() !== '') {
+        
+                    skillsTitle.style.display = 'block';
+                    skillsEl.style.display = 'flex';
+        
+                    card.dataset.skills.split(',').forEach(skill => {
+                        const span = document.createElement('span');
+                        span.textContent = skill.trim();
+                        skillsEl.appendChild(span);
+                    });
+        
+                } else {
+                    skillsTitle.style.display = 'none';
+                    skillsEl.style.display = 'none';
+                }
+        
+                // ===== GALLERY =====
+                const galleryData = card.dataset.gallery;
+        
+                if (galleryData && galleryData.trim() !== "") {
+                    galleryTitle.style.display = "block";
+                    galleryWrap.style.display = "block";
+        
+                    galleryEl.src = galleryData;
+                    galleryEl.alt = card.dataset.title + " gallery";
+                } 
+                else {
+                    galleryTitle.style.display = "none";
+                    galleryWrap.style.display = "none";
+                    galleryEl.src = "";
+                }
+        
+                // ===== OPEN STATE =====
+                modal.classList.add('active');
+                body.style.overflow = 'hidden';
+                body.classList.add('modal-open'); // 🔥 hide whatsapp
             });
-
-            // ===== TOOLS =====
-            toolsEl.innerHTML = '';
-            if (card.dataset.tools && card.dataset.tools.trim() !== '') {
-                toolsTitle.style.display = 'block';
-                toolsEl.style.display = 'flex';
-
-                card.dataset.tools.split(',').forEach(tool => {
-                    const span = document.createElement('span');
-                    span.textContent = tool.trim();
-                    toolsEl.appendChild(span);
-                });
-            } else {
-                toolsTitle.style.display = 'none';
-                toolsEl.style.display = 'none';
-            }
-
-            // ===== SKILLS =====
-            skillsEl.innerHTML = '';
-            if (card.dataset.skills && card.dataset.skills.trim() !== '') {
-                skillsTitle.style.display = 'block';
-                skillsEl.style.display = 'flex';
-
-                card.dataset.skills.split(',').forEach(skill => {
-                    const span = document.createElement('span');
-                    span.textContent = skill.trim();
-                    skillsEl.appendChild(span);
-                });
-            } else {
-                skillsTitle.style.display = 'none';
-                skillsEl.style.display = 'none';
-            }
-
-            // ===== GALLERY =====
-            if (card.dataset.gallery && card.dataset.gallery.trim() !== '') {
-                galleryTitle.style.display = 'block';
-                GalleryWrap.style.display = 'block';
-
-                galleryEl.src = card.dataset.gallery;
-                galleryEl.alt = card.dataset.title + " gallery";
-            } else {
-                galleryTitle.style.display = 'none';
-                GalleryWrap.style.display = 'none';
-            }
-
-            const galleryData = card.dataset.gallery;
-
-            if (galleryData && galleryData.trim() !== "") {
-
-                galleryTitle.style.display = "block";
-                GalleryWrap.style.display = "block";
-
-                galleryEl.src = galleryData;
-                galleryEl.alt = card.dataset.title + " gallery";
-
-            } else {
-
-                galleryTitle.style.display = "none";
-                GalleryWrap.style.display = "none";
-
-                galleryEl.src = ""; // reset biar image lama ga kebawa
-            }
-
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
         });
-    });
-    
-    document.getElementById('closeModal').onclick = closeModal;
-    modal.addEventListener('click', e => {
-        if (e.target === modal) closeModal();
-    });
-    
-    function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+        
+        
+        // ================= CLOSE MODAL =================
+        document.getElementById('closeModal').onclick = closeModal;
+        
+        modal.addEventListener('click', e => {
+            if (e.target === modal) closeModal();
+        });
+        
+        function closeModal() {
+            modal.classList.remove('active');
+            body.style.overflow = '';
+            body.classList.remove('modal-open');
+        }
     </script>
     
     <script>
@@ -754,6 +725,13 @@
         });
     </script>
 
+    <script>
+        document.addEventListener('keydown', e => {
+            if (e.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
 
 </body>
 
